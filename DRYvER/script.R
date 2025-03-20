@@ -59,5 +59,6 @@ if ("search_datasets" %in% to_do) {
     
     datasets_info = convert_datasets_search_to_tibble(datasets_search)
 
-    ASHE::write_tibble(datasets_info, "DRYvER-WP1-DRN-EU_dataset_info.csv")
+    ASHE::write_tibble(datasets_info,
+                       "DRYvER-WP1-DRN-EU_dataset_info.csv")
 }
