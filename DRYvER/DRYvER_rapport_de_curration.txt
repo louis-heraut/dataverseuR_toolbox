@@ -1,0 +1,56 @@
+DATASET ______________________________________________________________
+DOI : https://doi.org/10.57745/RS8266
+
+Piste d'amélioration :
+
+- Le titre est vague.
+  -- Quelles données (espèce, taille, diversité, occurence) ?
+  -- Quel type de données (obsevation de terrain, simulation, mesure de laboratoire, pré-traité pour, données brutes) ?
+  -- Quel contexte (en france, sous changement climatique, sous pression chimique anthropique) ?
+  -- Dans quel but (pour un diagnostic, pour du suivi de population, pour de la modélisation) ?  
+
+- La description est à étoffer avec le même type d'info plus détaillées que dans le titre.
+  -- Définir un peu plus les termes
+  -- Quel est l'objectif de ces données dans le projet ?
+  -- Est-ce qu'il y a des pistes ou exemple de réutilisation ?
+  -- Pourquoi ces données sont importantes ?
+
+- La présence d'un README (selon ces standard https://recherche.data.gouv.fr/fr/categorie/33/guide/modele-de-readme) est fortement conseillé même si c'est pas toujours simple de prendre ce temps en plus. Dans le cas où il n'y a pas de README la description est encore plus importante. Le mieux serait même de décrire les colonnes des tableaux dans la description si il n'y a pas de publication / jeu de données associés pour aider à comprendre ces données.
+
+- Est-ce que tu es le seul auteur de ces données ? Personne d'autre n'a participé à leur acquisition, structuration, traitement, mise en forme, dépôt ? Tu peux aussi remplir les ORCID et détailler les affiliations.
+
+- Il serait bien de rajouter au moins 3, 4 mots-clés.
+
+- Dans le cadre d'invertebré j'imagine qu'il y a des informations en plus qui pourraîent être renseignées dans les métadonnées de Science de la Vie concernant le type d'organisme présent dans ces mesures.
+
+- Dans le cadre de DRYvER je crois que des zones géographiques précises ont été au centre des études. Il serait bien de les mentionner dans les métadonnées geospatiales.
+
+- Ne pas hésiter non plus à lier ce jeu de données avec une publication ailleurs ou un autre jeu de données.
+
+- Le format txt et en particulier ceux présents dans ce jeu de données ne permettent pas d'assurer l'Interopérabilité et la Réutilisabilité des données selon les principes FAIR (un dépôt Recherche Data Gouv aide avant tout aux principes de Findabilité et de d'Accessibilité mais ne garanti pas des données qu'on pourraient considérées comme FAIR).
+  -- Utiliser de le format csv
+  -- Utiliser la virgule comme séparateur de colonnes et le point comme séparateur décimal.
+  -- Utiliser le format UTF-8 (problème d'encodage dans les fichiers)
+  -- Avoir une unique ligne de header avec une description du jeu de données qui décrit les colonnes ou beaucoup mieux un README selon ce type de standard : https://recherche.data.gouv.fr/fr/categorie/33/guide/modele-de-readme
+
+
+DATAVERSE DRYvER ET SOUS DATAVERSE ___________________________________
+URL : https://entrepot.recherche.data.gouv.fr/dataverse/dryver
+
+Piste d'amélioration :
+
+- Rajouter le logo de DRYvER en rectangulaire dans l'en-tête
+
+- Ajouter du formatage HTML pour la description.
+  -- Pour revenir à la ligne : <br>
+  -- Pour sauter une ligne : <br><br>
+  -- Pour faire un lien : <a href="https://url.fr" target="blank_">pantonymie</a> 
+  -- Pour mettre en gras : <b>sujet important</b>
+  -- Pour tracer une ligne : <hr>
+  -- Liste : <ul><li>item</it><li>autre item</it></ul>
+  
+- Il est intéressant de créer un jeu de données modèles de la collection pour éviter de devoir remplir des choses répétitives comme les informations sur le projet, les auteurs récurents, les Thématiques utilisées, ...
+
+- Pour la compréhension générale de la collection, l'utilisation de la métadonnées Thématique permet de structurer en grande catégorie les différents type de jeux de données.
+
+- Personnaliser les facettes affichées à gauche dans la collection est utile pour mettre en avant des métadonnées qui permettent de mieux appréhender la diversité des jeux de données.
