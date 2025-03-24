@@ -1,7 +1,7 @@
 
 META$title = "Projections hydrologiques Explore2 du débit pour le modèles MORDOR-TS sous {RCP}"
 
-META$alternativeURL = "https://www.drias-climat.fr/commande"
+META$alternativeURL = "https://www.drias-eau.fr/commande"
 
 META$datasetContactName = "Sauquet, Éric"
 META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
@@ -29,29 +29,30 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique MORDOR-TS pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces projections sont concaténées temporellement avec la partie historique commune à chaque RCP.<br><br>
+META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique MORDOR-TS pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
-Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation dans les métadonnées des fichiers NetCDF et le rapport LIEN.<br>
-Plus d'information sur les modèles hydrologiques utilisés est donnée dans le rapport LIEN. Retrouvez aussi une information localisée avec les fiches de diagnostic disponibles par régions hydrologiques ici : <a href='https://doi.org/10.57745/DMFUXW' target='blank_'>https://doi.org/10.57745/DMFUXW</a>.<br><br>
+Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
+
+La description des modèles hydrologiques utilisés est disponible dans les annexes du rapport <a href='https://doi.org/10.57745/S6PQXD' target='blank_'>https://doi.org/10.57745/S6PQXD</a>. Retrouvez le diagnostic des modèles hydrologiques résumé à l'échelle des régions hydrologiques dans les fiches téléchargeables ici : <a href='https://doi.org/10.57745/DMFUXW' target='blank_'>https://doi.org/10.57745/DMFUXW</a>.<br><br>
 
 <b>Métadonnées supplémentaires</b> :<ul>
-<li>Détails de l'ensemble des chaînes de modélisations : <a href='https://doi.org/10.57745/R6HG5X' target='blank_'>https://doi.org/10.57745/R6HG5X</a></li>
-<li>Détails de l'ensemble des points de simulation : <a href='https://doi.org/10.57745/UTKWR5' target='blank_'>https://doi.org/10.57745/UTKWR5</a></li>
-<li>Liste des simulations des chaînes de projections que l'on peut considéré comme aberrants / horsains par rapport à l'ensemble des chaînes de modélisation : <a href='https://doi.org/10.57745/YZNENQ' target='blank_'>https://doi.org/10.57745/YZNENQ</a></li></ul>
+<li>Description de l'ensemble des chaînes de modélisations : <a href='https://doi.org/10.57745/R6HG5X' target='blank_'>https://doi.org/10.57745/R6HG5X</a></li>
+<li>Description de l'ensemble des points de simulation : <a href='https://doi.org/10.57745/UTKWR5' target='blank_'>https://doi.org/10.57745/UTKWR5</a></li>
+<li>Liste des simulations des chaînes de projections jugées aberrantes / horsains : <a href='https://doi.org/10.57745/YZNENQ' target='blank_'>https://doi.org/10.57745/YZNENQ</a></li></ul>
 
-<b>Détail du nom des fichiers NetCDF séparé par des \"_\"</b> :<br>
+<b>Décomposition des chaînes de caractère formant le nom des fichiers NetCDF, séparées par des \"_\"</b> :<br>
 {1}:  Variable : Nom de la variable (avec Adjust si les données sont corrigées)<br>
 {2}:  Domain : Couverture spatiale des données<br>
 {3}:  GCM-Inst-Model : Identifiant du GCM forçeur = Institut-Modèle<br>
 {4}:  Experiment : Identifiant de l’expérience historique ou future via le scénario<br>
-{5}:  Member : numéro du membre de l'ensemble<br>
+{5}:  Member : Numéro du membre de l'ensemble<br>
 {6}:  RCM-Inst-Model : Identifiant du RCM = Institut-Modèle<br>
 {7}:  Version : Identifiant de l’expérience historique ou future via le scénario<br>
 {8}:  Bc-Inst-Method-Obs-Period : Identifiant de la méthode de correction de biais statistique =
 Institut-Méthode-Réanalyse-Période<br>
 {9}:  HYDRO-Inst-Model : Identifiant du HYDRO = Institut-Modèle<br>
-{10}: TimeFrequency : Le pas de temps du jeu de données<br>
-{11}: Startyear-Endyear: Couverture temporelle des données sous forme YYYYMMDD-YYYYMMDD<br>"
+{10}: TimeFrequency : Pas de temps du jeu de données<br>
+{11}: Startyear-Endyear : Couverture temporelle des données sous forme YYYYMMDD-YYYYMMDD"
 
 META$dsDescriptionLanguage = "French"
 META$language = "French"
