@@ -1,5 +1,5 @@
 
-META$title = "Projections hydrologiques Explore2 du débit pour le modèles J2000 sous {RCP}"
+META$title = "Projections hydrologiques Explore2 du débit pour le modèle J2000 sous {RCP}"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 

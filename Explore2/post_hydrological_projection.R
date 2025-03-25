@@ -29,9 +29,9 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 to_do = c(
     # "get_metadata"
-    # "search_datasets",
+    "search_datasets",
     # "create_datasets"
-    # "modify_datasets"
+    "modify_datasets"
     # "add_files"
     # "delete_files"
     # "delete_datasets"
@@ -77,11 +77,12 @@ if ("search_datasets" %in% to_do) {
     datasets_info = convert_datasets_search_to_tibble(datasets_search)
 }
 
+
 if ("create_datasets" %in% to_do |
     "modify_datasets" %in% to_do |
     "add_files" %in% to_do) {
 
-    nEXP_start = 2
+    nEXP_start = 3
     nHM_start = 9
 
     metadata_template_dir = "metadata_hydrological_projections"
@@ -146,6 +147,7 @@ if ("create_datasets" %in% to_do |
             }
             
             if ("modify_datasets" %in% to_do) {
+                Sys.sleep(4)
                 dataset_DOI =
                     modify_dataset_metadata(dataverse=dataverse,
                                             dataset_DOI=dataset_DOI,
@@ -159,10 +161,9 @@ if ("create_datasets" %in% to_do |
                                   paths=Paths_nc)
             }
         }
-        stop()
+        # stop()
     }
 }
-
 
 
 # modify_dataset_metadata = function (dataverse, dataset_DOI,
