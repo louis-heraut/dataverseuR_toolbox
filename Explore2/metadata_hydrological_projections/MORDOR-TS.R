@@ -3,14 +3,18 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle MORDO
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
-META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactName = "Céline, Monteil"
+META$datasetContactAffiliation = "Département LNHE, EDF-R&D, 78401 Chatou, France"
+META$datasetContactEmail = "celine-c.monteil@edf.fr"
 
-META$authorName1 = "Sauquet, Éric"
-META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
+
+META$authorName1 = "Céline, Monteil"
+META$authorAffiliation1 = "Département LNHE, EDF-R&D, 78401 Chatou, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+META$authorIdentifier1 = "0000-0001-5695-8910"
+
+META$authorName2 = "Frédéric, Hendrickx"
+META$authorAffiliation2 = "Département LNHE, EDF-R&D, 78401 Chatou, France"
 
 
 META$contributorType = "Data Curator"

@@ -3,14 +3,25 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle GRSD 
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
-META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactName = "Guillaume, Thirel"
+META$datasetContactAffiliation = "Université de Toulouse, CNES/IRD/CNRS/INRAE, CESBIO, Toulouse, France"
+META$datasetContactEmail = "guillaume.thirel@inrae.fr"
 
-META$authorName1 = "Sauquet, Éric"
-META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
+
+META$authorName1 = "Guillaume, Thirel"
+META$authorAffiliation1 = "Université de Toulouse, CNES/IRD/CNRS/INRAE, CESBIO, Toulouse, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+META$authorIdentifier1 = "0000-0002-1444-1830"
+
+META$authorName2 = "Charles, Perrin"
+META$authorAffiliation2 = "Université Paris-Saclay, INRAE, UR HYCAR, Antony, France"
+META$authorIdentifierScheme2 = "ORCID"
+META$authorIdentifier2 = "0000-0001-8552-1881"
+
+META$authorName3 = "Laurent, Strohmenger"
+META$authorAffiliation3 = "Department of Ecohydrology and Biogeochemistry, Leibniz Institute of Freshwater Ecology and Inland Fisheries (IGB), Berlin, Germany"
+META$authorIdentifierScheme3 = "ORCID"
+META$authorIdentifier3 = "0000-0003-4315-0968"
 
 
 META$contributorType = "Data Curator"

@@ -3,14 +3,20 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle EROS 
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
-META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactName = "Jean-Pierre, Vergnes"
+META$datasetContactAffiliation = "BRGM, Orléans, France"
+META$datasetContactEmail = "jp.vergnes@brgm.fr"
 
-META$authorName1 = "Sauquet, Éric"
-META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
+
+META$authorName1 = "Jean-Pierre, Vergnes"
+META$authorAffiliation1 = "BRGM, Orléans, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+META$authorIdentifier1 = "0000-0001-5659-0554"
+
+META$authorName2 = "Florence, Habets"
+META$authorAffiliation2 = "Laboratoire de Géologie, CNRS UMR 8538, École Normale Supérieure, PSL University, IPSL, Paris, France"
+META$authorIdentifierScheme2 = "ORCID"
+META$authorIdentifier2 = "0000-0003-1950-0921"
 
 
 META$contributorType = "Data Curator"

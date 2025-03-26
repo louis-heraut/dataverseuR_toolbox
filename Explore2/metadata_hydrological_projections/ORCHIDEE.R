@@ -3,14 +3,18 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle ORCHI
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
-META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactName = "Agnès, Ducharne"
+META$datasetContactAffiliation = "Sorbonne Université/CNRS/EPHE, METIS-IPSL, Paris, France"
+META$datasetContactEmail = "agnes.ducharne@upmc.fr"
 
-META$authorName1 = "Sauquet, Éric"
-META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
+
+META$authorName1 = "Agnès, Ducharne"
+META$authorAffiliation1 = "Sorbonne Université/CNRS/EPHE, METIS-IPSL, Paris, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+META$authorIdentifier1 = "0000-0002-6550-3413"
+
+META$authorName2 = "Peng, Huang"
+META$authorAffiliation2 = "Sorbonne Université/CNRS/EPHE, METIS-IPSL, Paris, France"
 
 
 META$contributorType = "Data Curator"

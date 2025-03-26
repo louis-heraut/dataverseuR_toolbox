@@ -3,14 +3,25 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle J2000
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
+META$datasetContactName = "Flora, Branger"
 META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactEmail = "flora.branger@inrae.fr"
 
-META$authorName1 = "Sauquet, Éric"
+
+META$authorName1 = "Flora, Branger"
 META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+META$authorIdentifier1 = "0000-0003-4273-8938"
+
+META$authorName2 = "Jérémie, Bonneau"
+META$authorAffiliation2 = "INSA Lyon, DEEP, Villeurbanne, France"
+META$authorIdentifierScheme2 = "ORCID"
+META$authorIdentifier2 = "0000-0003-1161-1993"
+
+META$authorName3 = "Louise, Mimeau"
+META$authorAffiliation3 = "INRAE, UR RiverLy, Villeurbanne, France"
+META$authorIdentifierScheme3 = "ORCID"
+META$authorIdentifier3 = "0000-0002-3437-5746"
 
 
 META$contributorType = "Data Curator"

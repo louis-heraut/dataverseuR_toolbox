@@ -3,14 +3,20 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle SMASH
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
-META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactName = "Patrick, Arnaud"
+META$datasetContactAffiliation = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
+META$datasetContactEmail = "patrick.arnaud@inrae.fr"
 
-META$authorName1 = "Sauquet, Éric"
-META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
+
+META$authorName1 = "Patrick, Arnaud"
+META$authorAffiliation1 = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+META$authorIdentifier1 = "0000-0003-4291-5949"
+
+META$authorName2 = "François, Colléoni"
+META$authorAffiliation2 = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
+META$authorIdentifierScheme2 = "ORCID"
+META$authorIdentifier2 = "0009-0006-4142-643X"
 
 
 META$contributorType = "Data Curator"

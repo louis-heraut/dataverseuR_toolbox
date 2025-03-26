@@ -3,14 +3,15 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle CTRIP
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
-META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactName = "Simon, Munier"
+META$datasetContactAffiliation = "CNRM, Université de Toulouse, Météo-France, CNRS, Toulouse, France"
+META$datasetContactEmail = "simon.munier@meteo.fr"
 
-META$authorName1 = "Sauquet, Éric"
-META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
+
+META$authorName1 = "Simon, Munier"
+META$authorAffiliation1 = "CNRM, Université de Toulouse, Météo-France, CNRS, Toulouse, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+META$authorIdentifier1 = "0000-0001-7176-8584"
 
 
 META$contributorType = "Data Curator"

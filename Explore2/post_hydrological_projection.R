@@ -31,8 +31,9 @@ to_do = c(
     # "get_metadata"
     "search_datasets",
     # "create_datasets"
-    "modify_datasets"
-    # "add_files"
+    # "modify_datasets"
+    # "add_netcdf"
+    "add_readme"
     # "delete_files"
     # "delete_datasets"
     # "publish_datasets"
@@ -80,10 +81,11 @@ if ("search_datasets" %in% to_do) {
 
 if ("create_datasets" %in% to_do |
     "modify_datasets" %in% to_do |
-    "add_files" %in% to_do) {
+    "add_netcdf" %in% to_do |
+    "add_readme" %in% to_do) {
 
-    nEXP_start = 3
-    nHM_start = 9
+    nEXP_start = 1
+    nHM_start = 1
 
     metadata_template_dir = "metadata_hydrological_projections"
     metadata_filename = "RDG_metadata"
@@ -140,10 +142,13 @@ if ("create_datasets" %in% to_do |
             }
 
             if ("modify_datasets" %in% to_do |
-                "add_files" %in% to_do) {
-                dataset_DOI =
-                    filter(datasets_info, grepl(exp_name, name) &
-                                          grepl(hm, name))$dataset_DOI
+                "add_netcdf" %in% to_do |
+                "add_readme" %in% to_do) {
+                dataset = filter(datasets_info, grepl(exp_name, name) &
+                                                grepl(hm, name))
+                dataset_DOI = dataset$dataset_DOI
+                dataset_citation = gsub("Gouv.*", "Gouv",
+                                        dataset$citation)
             }
             
             if ("modify_datasets" %in% to_do) {
@@ -153,12 +158,31 @@ if ("create_datasets" %in% to_do |
                                             dataset_DOI=dataset_DOI,
                                             metadata_path=res$file_path)
             }
-            if ("add_files" %in% to_do) {
-                Paths_nc = list.files(output_dirpath,
+            if ("add_netcdf" %in% to_do) {
+                nc_Paths = list.files(output_dirpath,
                                       pattern=".nc",
                                       full.names=TRUE)
                 add_dataset_files(dataset_DOI=dataset_DOI,
-                                  paths=Paths_nc)
+                                  paths=nc_Paths)
+            }
+            if ("add_readme" %in% to_do) {
+                README_template_path =
+                    file.path(metadata_template_dir, "README.txt")
+                
+                README_file = readLines(README_template_path)
+                id = which(grepl("[{]CITE[}]", README_file))
+                README_file = c(README_file[1:(id-1)],
+                                strwrap(dataset_citation, width=70),
+                                README_file[(id+1):length(README_file)])
+                README_file = gsub("[{]HM[}]",
+                                   hm, README_file)
+                README_file = gsub("[{]RCP[}]",
+                                   exp_name, README_file)
+                README_path = file.path(output_dirpath,
+                                        "README.txt")
+                writeLines(README_file, README_path)
+                add_dataset_files(dataset_DOI=dataset_DOI,
+                                  paths=README_path)
             }
         }
         # stop()

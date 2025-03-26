@@ -3,14 +3,13 @@ META$title = "Projections hydrologiques Explore2 du débit pour le modèle SIM2 
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Sauquet, Éric"
-META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$datasetContactEmail = "eric.sauquet@inrae.fr"
+META$datasetContactName = "Fabienne, Rousset"
+META$datasetContactAffiliation = "Météo France, Direction de la Climatologie et des Services Climatiques, Toulouse, France"
+META$datasetContactEmail = "fabienne.rousset@meteo.fr"
 
-META$authorName1 = "Sauquet, Éric"
-META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
-META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-9539-7730"
+
+META$authorName1 = "Fabienne, Rousset"
+META$authorAffiliation1 = "Météo France, Direction de la Climatologie et des Services Climatiques, Toulouse, France"
 
 
 META$contributorType = "Data Curator"
