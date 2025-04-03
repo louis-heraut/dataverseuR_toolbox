@@ -26,98 +26,72 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 
 to_do = c(
-    # "search_datasets",
-    # "get_metrics",
-    "get_save_data",
-    "plot_data"
+    "search_datasets",
+    "get_metrics"
+    # "get_save_data",
+    # "plot_data"
 )
 
 
 if ("search_datasets" %in% to_do) {
 
-    cols = c("dataset_DOI",
-             "url",
-             "name",
-             "citation",
-             "description",
-             "identifier_of_dataverse",
-             "subjects",
-             "keywords",
-             "fileCount",
-             "createdAt",
-             "authors")
-    
     query = "*"
     publication_status = "RELEASED"
     type = "dataset"
     n_search = 1000
     
-    datasets_search =
-        search(query=query,
-               publication_status=publication_status,
-               type=type,
-               dataverse="riverly",
-               n_search=n_search)
+    datasets =
+        search_datasets(query=query,
+                        publication_status=publication_status,
+                        type=type,
+                        dataverse="riverly",
+                        n_search=n_search)
     
-    datasets_info = convert_datasets_search_to_tibble(datasets_search)
-    datasets_info = dplyr::select(datasets_info,
-                                  dplyr::all_of(cols))
+    datasets_tmp =
+        search_datasets(query=query,
+                        publication_status=publication_status,
+                        type=type,
+                        dataverse="BDOH",
+                        n_search=n_search)
+    datasets = dplyr::bind_rows(datasets, datasets_tmp)
+    
+    datasets_tmp =
+        search_datasets(query=query,
+                        publication_status=publication_status,
+                        type=type,
+                        dataverse="explore2",
+                        n_search=n_search)
+    datasets = dplyr::bind_rows(datasets, datasets_tmp)
 
-    datasets_search =
-        search(query=query,
-               publication_status=publication_status,
-               type=type,
-               dataverse="BDOH",
-               n_search=n_search)
-    datasets_info_tmp = convert_datasets_search_to_tibble(datasets_search)
-    datasets_info_tmp = dplyr::select(datasets_info_tmp,
-                                      dplyr::all_of(cols))
-    datasets_info = dplyr::bind_rows(datasets_info, datasets_info_tmp)
-
-    datasets_search =
-        search(query=query,
-               publication_status=publication_status,
-               type=type,
-               dataverse="explore2",
-               n_search=n_search)
-    datasets_info_tmp = convert_datasets_search_to_tibble(datasets_search)
-    datasets_info_tmp = dplyr::select(datasets_info_tmp,
-                                      dplyr::all_of(cols))
-    datasets_info = dplyr::bind_rows(datasets_info, datasets_info_tmp)
-
-    datasets_info = dplyr::distinct(datasets_info, dataset_DOI,
-                                    .keep_all=TRUE)
+    datasets = dplyr::distinct(datasets, dataset_DOI,
+                               .keep_all=TRUE)
 }
 
 
 if ("get_metrics" %in% to_do) {
-    # datasets_DOI = get_DOI_from_datasets_search(datasets_search)
-    datasets_metrics = get_datasets_metrics(datasets_info$dataset_DOI)
-    datasets_info = dplyr::full_join(datasets_info, datasets_metrics,
-                                     by="dataset_DOI")
+    datasets_metrics = get_datasets_metrics(datasets$DOI)
+    datasets = dplyr::full_join(datasets, datasets_metrics,
+                                by="dataset_DOI")
 
-    datasets_size = get_datasets_size(datasets_info$dataset_DOI)
-    datasets_info = dplyr::full_join(datasets_info, datasets_size,
-                                     by="dataset_DOI")
+    datasets_size = get_datasets_size(datasets$DOI)
+    datasets = dplyr::full_join(datasets, datasets_size,
+                                by="dataset_DOI")
     
-    ASHE::write_tibble(datasets_info,
-                       path="datasets_info.csv")
+    ASHE::write_tibble(datasets,
+                       path="datasets.csv")
 }
  
 
 if ("get_save_data" %in% to_do) {
-    data = ASHE::read_tibble("datasets_info_updated.csv")
+    data = ASHE::read_tibble("datasets_updated.csv")
     data$createdAt = as.Date(substr(data$createdAt, 1, 10))
     data$authors = stringr::str_to_title(ASHE::clean_path(data$authors))
     data = dplyr::filter(data,
                          as.Date("2019-01-01") <= createdAt &
                          createdAt <= as.Date("2024-12-31"))
-    # ASHE::write_tibble(data, "datasets_info_updated.csv")
+    # ASHE::write_tibble(data, "datasets_updated.csv")
 }
 
-
-# DUBOIS VIVIEN PAS RIVERLY
-# Continuous measurement of the volumes discharged from three French single-family homes
 
 if ("plot_data" %in% to_do) {
     library(ggplot2)

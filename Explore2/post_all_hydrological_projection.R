@@ -39,38 +39,24 @@ dataverse = "explore2-projections_hydrologiques"
 
 if ("get_metadata" %in% to_do) {
     dataset_DOI = "doi:10.57745/VA7KHZ"
-    metadata = get_dataset_metadata(dataset_DOI=dataset_DOI)
+    metadata = get_datasets_metadata(datasets_DOI=dataset_DOI)
     convert_metadata(metadata)
 }
 
 
 if ("search_datasets" %in% to_do) {
 
-    cols = c("dataset_DOI",
-             "url",
-             "name",
-             "citation",
-             "description",
-             "identifier_of_dataverse",
-             "subjects",
-             "keywords",
-             "fileCount",
-             "createdAt",
-             "authors")
-    
     query = "*"
     publication_status = "DRAFT"
     type = "dataset"
     n_search = 1000
     
-    datasets_search =
-        search(query=query,
-               publication_status=publication_status,
-               type=type,
-               dataverse=dataverse,
-               n_search=n_search)
-    
-    datasets_info = convert_datasets_search_to_tibble(datasets_search)
+    datasets =
+        search_datasets(query=query,
+                        publication_status=publication_status,
+                        type=type,
+                        dataverse=dataverse,
+                        n_search=n_search)
 }
 
 if ("create_datasets" %in% to_do) {
@@ -86,13 +72,13 @@ if ("create_datasets" %in% to_do) {
     file.copy(metadata_template_path, metadata_path)
     
     initialise_metadata()
-    source(metadata_path)
-    res = generate_metadata(out_dir=path_to_data,
-                            file_name_overwrite=
+    source(metadata_template_path)
+    res = generate_metadata(metadata_dir=path_to_data,
+                            metadata_filename=
                                 metadata_filename)
     dataset_DOI =
-        create_dataset(dataverse=dataverse,
-                       metadata_path=res$file_path)
+        create_datasets(dataverse=dataverse,
+                        metadata_paths=res$metadata_path)
 }
 
 

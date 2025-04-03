@@ -1,7 +1,8 @@
 
 META$title = "Ensemble des projections hydrologiques Explore2 du débit"
+META$alternativeTitle = "Collection Explore2 - Projections hydrologiques"
 
-META$alternativeURL = "https://www.drias-eau.fr/commande"
+META$alternativeURL = "https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques"
 
 META$datasetContactName = "Sauquet, Éric"
 META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"

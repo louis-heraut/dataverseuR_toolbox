@@ -26,14 +26,13 @@ dotenv::load_dot_env(file=".env-entrepot")
 # dotenv::load_dot_env(file=".env-demo")
 
 
-
 to_do = c(
     # "get_metadata"
-    "search_datasets",
+    "search_datasets"
     # "create_datasets"
     # "modify_datasets"
     # "add_netcdf"
-    "add_readme"
+    # "add_readme"
     # "delete_files"
     # "delete_datasets"
     # "publish_datasets"
@@ -44,38 +43,24 @@ dataverse = "explore2-projections_hydrologiques"
 
 if ("get_metadata" %in% to_do) {
     dataset_DOI = "doi:10.57745/VA7KHZ"
-    metadata = get_dataset_metadata(dataset_DOI=dataset_DOI)
+    metadata = get_datasets_metadata(datasets_DOI=dataset_DOI)
     convert_metadata(metadata)
 }
 
 
 if ("search_datasets" %in% to_do) {
-
-    cols = c("dataset_DOI",
-             "url",
-             "name",
-             "citation",
-             "description",
-             "identifier_of_dataverse",
-             "subjects",
-             "keywords",
-             "fileCount",
-             "createdAt",
-             "authors")
     
     query = "*"
     publication_status = "DRAFT"
     type = "dataset"
     n_search = 1000
     
-    datasets_search =
-        search(query=query,
-               publication_status=publication_status,
-               type=type,
-               dataverse=dataverse,
-               n_search=n_search)
-    
-    datasets_info = convert_datasets_search_to_tibble(datasets_search)
+    datasets =
+        search_datasets(query=query,
+                        publication_status=publication_status,
+                        type=type,
+                        dataverse=dataverse,
+                        n_search=n_search)
 }
 
 
@@ -130,23 +115,24 @@ if ("create_datasets" %in% to_do |
                 
                 initialise_metadata()
                 source(metadata_path)
-                res = generate_metadata(out_dir=output_dirpath,
-                                        file_name_overwrite=
+                res = generate_metadata(metadata_dir=output_dirpath,
+                                        metadata_filename=
                                             metadata_filename)
             }
 
             if ("create_datasets" %in% to_do) {
                 dataset_DOI =
-                    create_dataset(dataverse=dataverse,
-                                   metadata_path=res$file_path)
+                    create_datasets(dataverse=dataverse,
+                                    metadata_paths=
+                                        res$metadata_path)
             }
 
             if ("modify_datasets" %in% to_do |
                 "add_netcdf" %in% to_do |
                 "add_readme" %in% to_do) {
-                dataset = filter(datasets_info, grepl(exp_name, name) &
-                                                grepl(hm, name))
-                dataset_DOI = dataset$dataset_DOI
+                dataset = filter(datasets, grepl(exp_name, name) &
+                                           grepl(hm, name))
+                dataset_DOI = dataset$DOI
                 dataset_citation = gsub("Gouv.*", "Gouv",
                                         dataset$citation)
             }
@@ -154,9 +140,9 @@ if ("create_datasets" %in% to_do |
             if ("modify_datasets" %in% to_do) {
                 Sys.sleep(4)
                 dataset_DOI =
-                    modify_dataset_metadata(dataverse=dataverse,
-                                            dataset_DOI=dataset_DOI,
-                                            metadata_path=res$file_path)
+                    modify_datasets(dataverse=dataverse,
+                                    datasets_DOI=dataset_DOI,
+                                    metadata_paths=res$metadata_path)
             }
             if ("add_netcdf" %in% to_do) {
                 nc_Paths = list.files(output_dirpath,
@@ -190,53 +176,17 @@ if ("create_datasets" %in% to_do |
 }
 
 
-# modify_dataset_metadata = function (dataverse, dataset_DOI,
-#                                     metadata_path,
-#                                     BASE_URL = Sys.getenv("BASE_URL"), 
-#                                     API_TOKEN = Sys.getenv("API_TOKEN")) {
-#     metadata_json = jsonlite::fromJSON(metadata_path, simplifyDataFrame = FALSE, 
-#                                        simplifyVector = FALSE)
-#     modify_url = paste0(BASE_URL, "/api/datasets/:persistentId/versions/:draft?persistentId=", 
-#                         dataset_DOI)
-#     response = httr::PUT(modify_url, httr::add_headers(`X-Dataverse-key` = API_TOKEN), 
-#                          body = metadata_json$datasetVersion, encode = "json")
-    
-#     if (httr::status_code(response) != 200) {
-#         cat("Failed to add/update metadata.\n")
-#         cat("Status code: ", httr::status_code(response), "\n")
-#         cat("Response content: ", httr::content(response, as = "text", 
-#                                                 encoding = "UTF-8"), "\n")
-#         stop("Error during metadata addition.")
-#     }
-#     dataset_info = httr::content(response, "parsed")
-#     dataset_DOI_URL = gsub("doi[:]", "https://doi.org/", dataset_DOI)
-#     message(paste0("Dataset of DOI ", dataset_DOI, " has been modify in ", 
-#                    BASE_URL, "/dataverse/", dataverse, " at ", dataset_DOI_URL))
-#     return(dataset_DOI)
-# }
-
-
-
-
-# if ("add_files" %in% to_do) {
-    # add_dataset_files(dataset_DOI=dataset_DOI,
-                      # paths="LICENSE")
-# }
-
 if ("delete_files" %in% to_do) {
     dataset_DOI = "doi:10.57745/UBCMZK"
-    delete_dataset_files(dataset_DOI=dataset_DOI)
+    delete_all_datasets_files(datasets_DOI=dataset_DOI)
 }
 
 if ("delete_datasets" %in% to_do) {
-    for (dataset_DOI in datasets_info$dataset_DOI) {
-        delete_dataset(dataset_DOI=dataset_DOI)
-    }
+    delete_datasets(datasets_DOI=dataset_DOI)
 }
 
-
 if ("publish_datasets" %in% to_do) {
-    publish_dataset(dataset_DOI, type="major")
+    publish_datasets(datasets_DOI=dataset_DOI, type="major")
 }
 
 
