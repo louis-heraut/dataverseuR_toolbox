@@ -28,18 +28,19 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 to_do = c(
     # "get_metadata"
-    "search_datasets"
+    "search_datasets",
     # "create_datasets"
     # "modify_datasets"
     # "add_netcdf"
     # "add_readme"
+    "rename_files"
     # "delete_files"
     # "delete_datasets"
     # "publish_datasets"
 )
 
 dataverse = "explore2-projections_hydrologiques"
-
+path_to_data = "/media/lheraut/Explore2/projections_hydrologiques/hydrological-projection_daily-time-series_by-chain_merged-netcdf"
 
 if ("get_metadata" %in% to_do) {
     dataset_DOI = "doi:10.57745/VA7KHZ"
@@ -50,7 +51,7 @@ if ("get_metadata" %in% to_do) {
 
 if ("search_datasets" %in% to_do) {
     
-    query = "*"
+    query = "title:'RCP'"
     publication_status = "DRAFT"
     type = "dataset"
     n_search = 1000
@@ -74,7 +75,6 @@ if ("create_datasets" %in% to_do |
 
     metadata_template_dir = "metadata_hydrological_projections"
     metadata_filename = "RDG_metadata"
-    path_to_data = "/media/lheraut/Explore2/projections_hydrologiques/hydrological-projection_daily-time-series_by-chain_merged-netcdf"
     Dirpaths = list.dirs(path_to_data, recursive=FALSE)
     Dirs = gsub(".*[/]", "", Dirpaths)
     Info_Dirs = strsplit(Dirs, "_")
@@ -172,6 +172,61 @@ if ("create_datasets" %in% to_do |
             }
         }
         # stop()
+    }
+}
+
+if ("rename_files" %in% to_do) {
+    datasets_DOI = datasets$dataset_DOI
+
+    Paths_nc = list.files(path_to_data,
+                          pattern=".nc",
+                          full.names=TRUE,
+                          recursive=TRUE)
+    Paths_nc = Paths_nc[!grepl("SAFRAN", dirname(Paths_nc))]
+    
+    Files_nc = basename(Paths_nc)
+    Files_nc_cut = sapply(lapply(strsplit(Files_nc, "_"),
+                                 "[", 1:10), paste0,
+                          collapse="_")
+    
+    for (dataset_DOI in datasets_DOI) {
+        files = list_datasets_files(dataset_DOI)
+        files = dplyr::filter(files,
+                              gsub(".*[.]", "", label) == "nc")
+        files$new_name = NA
+
+        nFiles = nrow(files)
+        for (i in 1:nFiles) {
+            file = files[i, ]
+            fID = file$id
+            name = file$label
+            name_cut =
+                paste0(unlist(strsplit(name, "_"))[1:10],
+                       collapse="_")
+            path_nc = Paths_nc[Files_nc_cut == name_cut]
+            
+            NC = ncdf4::nc_open(path_nc)
+            min_date = min(ncdf4::ncvar_get(NC, "time") +
+                           as.Date("1950-01-01"))
+            min_date = format(min_date, "%Y%m%d")
+            ncdf4::nc_close(NC)
+
+            new_name = unlist(strsplit(name, "_"))
+            new_period =
+                paste0(min_date,
+                       gsub(".*[-]", "-",
+                            new_name[11]))
+            new_name[11] = new_period
+            new_name = paste0(new_name, collapse="_")
+
+            rename_datasets_files(file_DOI=fID,
+                                  new_name=new_name,
+                                  is_DOI_ID=TRUE)
+            
+            new_path_nc = file.path(dirname(path_nc),
+                                    new_name)
+            file.rename(from=path_nc, to=new_path_nc)
+        }
     }
 }
 
