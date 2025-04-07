@@ -1,8 +1,6 @@
 
-META$title = "Ensemble des projections hydrologiques Explore2 du débit"
-META$alternativeTitle = "Collection Explore2 - Projections hydrologiques"
-
-META$alternativeURL = "https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques"
+META$title = "Ensemble des narratifs des projections hydrologiques Explore2 du débit"
+META$alternativeTitle = "Collection Explore2 - Narratifs dans les projections hydrologiques"
 
 META$datasetContactName = "Sauquet, Éric"
 META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
@@ -187,11 +185,22 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Ensemble de 540 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour l'ensemble des projections climatiques Explore2. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
+META$dsDescriptionValue = "Ensemble de 36 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour la sélection des 4 narratifs climatiques Explore2 sous RCP 8.5. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
-Ce dépôt renvoit vers l'ensemble des sous-jeux de données séparés par modèles hydrologiques et scénario RCP. Chacun de ces sous-jeux de données regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
+Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM, donc par narratif pour chaque modèle hydrologique. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
 
 La description des modèles hydrologiques utilisés est disponible dans les annexes du rapport <a href='https://doi.org/10.57745/S6PQXD' target='blank_'>https://doi.org/10.57745/S6PQXD</a>. Retrouvez le diagnostic des modèles hydrologiques résumé à l'échelle des régions hydrologiques dans les fiches téléchargeables ici : <a href='https://doi.org/10.57745/DMFUXW' target='blank_'>https://doi.org/10.57745/DMFUXW</a>.<br><br>
+
+<b>Définition des 4 narratifs climatiques</b> :<ul>
+<li><b>violet</b> (#791F5D) : HadGEM2-ES_historical-rcp85_CCLM4-8-17_ADAMONT<br>
+Fort réchauffement et forts contrastes saisonniers en précipitations</li>
+<li><b>orange</b> (#E09B2F) : EC-EARTH_historical-rcp85_HadREM3-GA7_ADAMONT<br>
+Fort réchauffement et fort assèchement en été (et en annuel)</li>
+<li><b>jaune</b> (#EECC66) : CNRM-CM5_historical-rcp85_ALADIN63_ADAMONT<br>
+Changements futurs relativement peu marqués</li>
+<li><b>vert</b> (#569A71) : HadGEM2-ES_historical-rcp85_ALADIN63_ADAMONT<br>
+Réchauffement marqué et augmentation des précipitations</li>
+</ul>
 
 <b>Métadonnées supplémentaires</b> :<ul>
 <li>Description de l'ensemble des chaînes de modélisations : <a href='https://doi.org/10.57745/R6HG5X' target='blank_'>https://doi.org/10.57745/R6HG5X</a></li>
@@ -267,8 +276,6 @@ META$softwareVersion8 = "x"
 META$softwareName9 = "SMASH"
 META$softwareVersion9 = "x"
 
-META$seriesName1 = "RCP 2.6"
-META$seriesName2 = "RCP 4.5"
 META$seriesName3 = "RCP 8.5"
 
 # META$publicationCitation = "futur publication"

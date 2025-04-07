@@ -13,11 +13,6 @@ META$authorAffiliation1 = "BRGM, Orléans, France"
 META$authorIdentifierScheme1 = "ORCID"
 META$authorIdentifier1 = "0000-0001-5659-0554"
 
-META$authorName2 = "Florence, Habets"
-META$authorAffiliation2 = "Laboratoire de Géologie, CNRS UMR 8538, École Normale Supérieure, PSL University, IPSL, Paris, France"
-META$authorIdentifierScheme2 = "ORCID"
-META$authorIdentifier2 = "0000-0003-1950-0921"
-
 
 META$contributorType = "Data Curator"
 META$contributorName = "Héraut, Louis"

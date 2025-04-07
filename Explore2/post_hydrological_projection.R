@@ -33,10 +33,11 @@ to_do = c(
     # "modify_datasets"
     # "add_netcdf"
     # "add_readme"
-    "rename_files"
+    # "rename_files"
     # "delete_files"
+    # "delete_readme"
     # "delete_datasets"
-    # "publish_datasets"
+    "publish_datasets"
 )
 
 dataverse = "explore2-projections_hydrologiques"
@@ -44,14 +45,14 @@ path_to_data = "/media/lheraut/Explore2/projections_hydrologiques/hydrological-p
 
 if ("get_metadata" %in% to_do) {
     dataset_DOI = "doi:10.57745/VA7KHZ"
-    metadata = get_datasets_metadata(datasets_DOI=dataset_DOI)
+    metadata = get_datasets_metadata(dataset_DOI=dataset_DOI)
     convert_metadata(metadata)
 }
 
 
 if ("search_datasets" %in% to_do) {
     
-    query = "title:'RCP'"
+    query = 'title:"RCP"'
     publication_status = "DRAFT"
     type = "dataset"
     n_search = 1000
@@ -62,6 +63,7 @@ if ("search_datasets" %in% to_do) {
                         type=type,
                         dataverse=dataverse,
                         n_search=n_search)
+    datasets
 }
 
 
@@ -132,7 +134,7 @@ if ("create_datasets" %in% to_do |
                 "add_readme" %in% to_do) {
                 dataset = filter(datasets, grepl(exp_name, name) &
                                            grepl(hm, name))
-                dataset_DOI = dataset$DOI
+                dataset_DOI = dataset$dataset_DOI
                 dataset_citation = gsub("Gouv.*", "Gouv",
                                         dataset$citation)
             }
@@ -141,7 +143,7 @@ if ("create_datasets" %in% to_do |
                 Sys.sleep(4)
                 dataset_DOI =
                     modify_datasets(dataverse=dataverse,
-                                    datasets_DOI=dataset_DOI,
+                                    dataset_DOI=dataset_DOI,
                                     metadata_paths=res$metadata_path)
             }
             if ("add_netcdf" %in% to_do) {
@@ -167,8 +169,8 @@ if ("create_datasets" %in% to_do |
                 README_path = file.path(output_dirpath,
                                         "README.txt")
                 writeLines(README_file, README_path)
-                add_dataset_files(dataset_DOI=dataset_DOI,
-                                  paths=README_path)
+                add_datasets_files(dataset_DOI=dataset_DOI,
+                                   file_paths=README_path)
             }
         }
         # stop()
@@ -233,15 +235,24 @@ if ("rename_files" %in% to_do) {
 
 if ("delete_files" %in% to_do) {
     dataset_DOI = "doi:10.57745/UBCMZK"
-    delete_all_datasets_files(datasets_DOI=dataset_DOI)
+    delete_all_datasets_files(dataset_DOI=dataset_DOI)
 }
 
+
+if ("delete_readme" %in% to_do) {
+    files = list_datasets_files(datasets$dataset_DOI)
+    readmes = dplyr::filter(files, grepl("README", label))
+    delete_datasets_files(file_DOI=readmes$id,
+                          is_DOI_ID=TRUE)
+}
+
+
 if ("delete_datasets" %in% to_do) {
-    delete_datasets(datasets_DOI=dataset_DOI)
+    delete_datasets(dataset_DOI=dataset_DOI)
 }
 
 if ("publish_datasets" %in% to_do) {
-    publish_datasets(datasets_DOI=dataset_DOI, type="major")
+    publish_datasets(dataset_DOI=datasets$dataset_DOI, type="major")
 }
 
 

@@ -1,12 +1,12 @@
 
-META$title = "Ensemble des projections hydrologiques Explore2 du débit"
-META$alternativeTitle = "Collection Explore2 - Projections hydrologiques"
+META$title = "Simulations hydrologiques Explore2 du débit pour l'ensemble des modèles hydrologiques sous la réanalyse SAFRAN"
 
-META$alternativeURL = "https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques"
+META$alternativeURL = "https://www.drias-eau.fr/commande"
 
 META$datasetContactName = "Sauquet, Éric"
 META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
 META$datasetContactEmail = "eric.sauquet@inrae.fr"
+
 
 META$authorName1 = "Sauquet, Éric"
 META$authorAffiliation1 = "UR RiverLy, INRAE, Villeurbanne, France"
@@ -187,9 +187,9 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Ensemble de 540 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour l'ensemble des projections climatiques Explore2. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
+META$dsDescriptionValue = "Simulations de débits journaliers issus des 9 modèles hydrologiques Explore2 pour la réanalyse SAFRAN. Ces fichiers NetCDF sont aussi disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
-Ce dépôt renvoit vers l'ensemble des sous-jeux de données séparés par modèles hydrologiques et scénario RCP. Chacun de ces sous-jeux de données regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
+Ce dépôt regroupe un fichier NetCDF par modèles hydrologiques. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
 
 La description des modèles hydrologiques utilisés est disponible dans les annexes du rapport <a href='https://doi.org/10.57745/S6PQXD' target='blank_'>https://doi.org/10.57745/S6PQXD</a>. Retrouvez le diagnostic des modèles hydrologiques résumé à l'échelle des régions hydrologiques dans les fiches téléchargeables ici : <a href='https://doi.org/10.57745/DMFUXW' target='blank_'>https://doi.org/10.57745/DMFUXW</a>.<br><br>
 
@@ -201,16 +201,10 @@ La description des modèles hydrologiques utilisés est disponible dans les anne
 <b>Décomposition des chaînes de caractère formant le nom des fichiers NetCDF, séparées par des \"_\"</b> :<br>
 {1}:  Variable : Nom de la variable (avec Adjust si les données sont corrigées)<br>
 {2}:  Domain : Couverture spatiale des données<br>
-{3}:  GCM-Inst-Model : Identifiant du GCM forçeur = Institut-Modèle<br>
-{4}:  Experiment : Identifiant de l’expérience historique ou future via le scénario<br>
-{5}:  Member : Numéro du membre de l'ensemble<br>
-{6}:  RCM-Inst-Model : Identifiant du RCM = Institut-Modèle<br>
-{7}:  Version : Identifiant de l’expérience historique ou future via le scénario<br>
-{8}:  Bc-Inst-Method-Obs-Period : Identifiant de la méthode de correction de biais statistique =
-Institut-Méthode-Réanalyse-Période<br>
-{9}:  HYDRO-Inst-Model : Identifiant du HYDRO = Institut-Modèle<br>
-{10}: TimeFrequency : Pas de temps du jeu de données<br>
-{11}: Startyear-Endyear : Couverture temporelle des données sous forme YYYYMMDD-YYYYMMDD"
+{3}:  Reanalysis : Nom de la Réanalyse utilisée en entrée<br>
+{4}:  HYDRO-Inst-Model : Identifiant du HYDRO = Institut-Modèle<br>
+{5}: TimeFrequency : Pas de temps du jeu de données<br>
+{6}: Startyear-Endyear : Couverture temporelle des données sous forme YYYYMMDD-YYYYMMDD"
 
 META$dsDescriptionLanguage = "French"
 META$language = "French"
@@ -227,7 +221,7 @@ META$keywordTermURL2 = "http://opendata.inrae.fr/thesaurusINRAE/c_1352"
 META$keywordVocabulary2 = "INRAETHES"
 META$keywordVocabularyURI2 = "http://opendata.inrae.fr/thesaurusINRAE/thesaurusINRAE"
 
-META$keywordValue3 = "hydrological projection"
+META$keywordValue3 = "hydrological simulation"
 
 META$keywordValue4 = "climate change impacts"
 META$keywordTermURL4 = "http://aims.fao.org/aos/agrovoc/c_13fb5a08"
@@ -267,9 +261,7 @@ META$softwareVersion8 = "x"
 META$softwareName9 = "SMASH"
 META$softwareVersion9 = "x"
 
-META$seriesName1 = "RCP 2.6"
-META$seriesName2 = "RCP 4.5"
-META$seriesName3 = "RCP 8.5"
+META$seriesName3 = "SAFRAN"
 
 # META$publicationCitation = "futur publication"
 # META$publicationIDType = "doi"
@@ -283,7 +275,7 @@ META$projectURL = "https://app.inrae.fr/expertise/dossier-le-projet-explore2-des
 
 
 META$timePeriodCoveredStart = "1976-01-01"
-META$timePeriodCoveredEnd = "2100-12-31"
+META$timePeriodCoveredEnd = "2022-12-31"
 
 META$country = "France"
 

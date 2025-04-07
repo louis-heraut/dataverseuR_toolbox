@@ -18,6 +18,11 @@ META$authorAffiliation2 = "UMR RECOVER, INRAE, Aix-Marseille University, Le Thol
 META$authorIdentifierScheme2 = "ORCID"
 META$authorIdentifier2 = "0009-0006-4142-643X"
 
+META$authorName3 = "Pierre-André, Garambois"
+META$authorAffiliation3 = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
+META$authorIdentifierScheme3 = "ORCID"
+META$authorIdentifier3 = "0000-0001-8350-6741"
+
 
 META$contributorType = "Data Curator"
 META$contributorName = "Héraut, Louis"
