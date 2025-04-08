@@ -28,23 +28,23 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 
 to_do = c(
-    # "search_datasets"
+    "search_datasets"
     # "create_datasets"
     # "modify_datasets"
     # "add_netcdf"
-    "add_readme"
+    # "add_readme"
 )
 
-dataverse = "explore2-projections_hydrologiques"
+dataverse = "explore2"
 
 
 if ("search_datasets" %in% to_do) {
 
     query = 'title:"SAFRAN"'
-    publication_status = "DRAFT"
+    publication_status = "RELEASED"
     type = "dataset"
     n_search = 1000
-    
+
     datasets =
         search_datasets(query=query,
                         publication_status=publication_status,
