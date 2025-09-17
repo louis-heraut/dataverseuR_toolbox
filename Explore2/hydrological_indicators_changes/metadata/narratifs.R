@@ -1,22 +1,16 @@
 
-META$title = "Projections hydrologiques Explore2 du débit pour le modèle SIM2 sous {RCP}"
+META$title = "Changements par horizon temporel pour l'ensemble des narratifs des projections hydrologiques Explore2 du débit (référence 1976-2005)"
+META$alternativeTitle = "Collection Explore2 - Narratifs dans les projections hydrologiques"
 
-META$alternativeURL = "https://www.drias-eau.fr/commande"
-
-META$datasetContactName = "Fabienne, Rousset"
-META$datasetContactAffiliation = "Météo France, Direction de la Climatologie et des Services Climatiques, Toulouse, France"
-META$datasetContactEmail = "fabienne.rousset@meteo.fr"
-
-
-META$authorName1 = "Fabienne, Rousset"
-META$authorAffiliation1 = "Météo France, Direction de la Climatologie et des Services Climatiques, Toulouse, France"
+META$datasetContactName = "Héraut, Louis"
+META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
+META$datasetContactEmail = "louis.heraut@inrae.fr"
 
 
-META$contributorType = "Data Curator"
-META$contributorName = "Héraut, Louis"
-META$contributorAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$contributorIdentifierScheme = "ORCID"
-META$contributorIdentifier = "0009-0006-4372-0923"
+META$authorName1 = "Héraut, Louis"
+META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
+META$authorIdentifierScheme1 = "ORCID"
+META$authorIdentifier1 = "0009-0006-4372-0923"
 
 
 META$producerName = "Explore2"
@@ -28,11 +22,22 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique SIM2 pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
+META$dsDescriptionValue = "Ensemble de 36 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour la sélection des 4 narratifs climatiques Explore2 sous RCP 8.5. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
-Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
+Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM, donc par narratif pour chaque modèle hydrologique. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
 
 La description des modèles hydrologiques utilisés est disponible dans les annexes du rapport <a href='https://doi.org/10.57745/S6PQXD' target='blank_'>https://doi.org/10.57745/S6PQXD</a>. Retrouvez le diagnostic des modèles hydrologiques résumé à l'échelle des régions hydrologiques dans les fiches téléchargeables ici : <a href='https://doi.org/10.57745/DMFUXW' target='blank_'>https://doi.org/10.57745/DMFUXW</a>.<br><br>
+
+<b>Définition des 4 narratifs climatiques</b> :<ul>
+<li><b>violet</b> (#791F5D) : HadGEM2-ES_historical-rcp85_CCLM4-8-17_ADAMONT<br>
+Fort réchauffement et forts contrastes saisonniers en précipitations</li>
+<li><b>orange</b> (#E09B2F) : EC-EARTH_historical-rcp85_HadREM3-GA7_ADAMONT<br>
+Fort réchauffement et fort assèchement en été (et en annuel)</li>
+<li><b>jaune</b> (#EECC66) : CNRM-CM5_historical-rcp85_ALADIN63_ADAMONT<br>
+Changements futurs relativement peu marqués</li>
+<li><b>vert</b> (#569A71) : HadGEM2-ES_historical-rcp85_ALADIN63_ADAMONT<br>
+Réchauffement marqué et augmentation des précipitations</li>
+</ul>
 
 <b>Métadonnées supplémentaires</b> :<ul>
 <li>Description de l'ensemble des chaînes de modélisations : <a href='https://doi.org/10.57745/R6HG5X' target='blank_'>https://doi.org/10.57745/R6HG5X</a></li>
@@ -75,19 +80,43 @@ META$keywordTermURL4 = "http://aims.fao.org/aos/agrovoc/c_13fb5a08"
 META$keywordVocabulary4 = "AGROVOC"
 META$keywordVocabularyURI4 = "http://aims.fao.org/aos/agrovoc/"
 
+META$topicClassValue = "Hydrologie"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_1108"
 
 META$kindOfData = "Dataset"
-META$kindOfDataOther = "Projections hydrologiques (débit)"
+META$kindOfDataOther = "Projections hydrologiques (débit) - Narratifs"
 META$dataOrigin = "simulation data"
 
-META$softwareName = "SIM2"
-META$softwareVersion = "x"
-META$seriesName = "{RCP}"
 
-# META$publicationCitation = "futur publication"
-# META$publicationIDType = "doi"
-# META$publicationIDNumber = "doi"
-# META$publicationURL = "https://doi.org"
+META$softwareName1 = "CTRIP"
+META$softwareVersion1 = "x"
+
+META$softwareName2 = "EROS"
+META$softwareVersion2 = "x"
+
+META$softwareName3 = "GRSD"
+META$softwareVersion3 = "x"
+
+META$softwareName4 = "J2000"
+META$softwareVersion4 = "x"
+
+META$softwareName5 = "MORDOR-SD"
+META$softwareVersion5 = "x"
+
+META$softwareName6 = "MORDOR-TS"
+META$softwareVersion6 = "x"
+
+META$softwareName7 = "ORCHIDEE"
+META$softwareVersion7 = "x"
+
+META$softwareName8 = "SIM2"
+META$softwareVersion8 = "x"
+
+META$softwareName9 = "SMASH"
+META$softwareVersion9 = "x"
+
+META$seriesName3 = "RCP 8.5"
 
 
 META$projectAcronym = "Explore2"
@@ -99,6 +128,5 @@ META$timePeriodCoveredStart = "1976-01-01"
 META$timePeriodCoveredEnd = "2100-12-31"
 
 META$country = "France"
-META$otherGeographicCoverage = "France entière"
 
 META$depositor = "HERAUT, LOUIS"

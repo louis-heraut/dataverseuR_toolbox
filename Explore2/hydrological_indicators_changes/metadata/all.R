@@ -1,34 +1,17 @@
 
-META$title = "Projections hydrologiques Explore2 du débit pour le modèle SMASH sous {RCP}"
+META$title = "Changements par horizon temporel des projections hydrologiques Explore2 du débit pour le modèle {HM} sous {RCP} (référence 1976-2005)"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Patrick, Arnaud"
-META$datasetContactAffiliation = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
-META$datasetContactEmail = "patrick.arnaud@inrae.fr"
+META$datasetContactName = "Héraut, Louis"
+META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
+META$datasetContactEmail = "louis.heraut@inrae.fr"
 
 
-META$authorName1 = "Patrick, Arnaud"
-META$authorAffiliation1 = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
+META$authorName1 = "Héraut, Louis"
+META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0003-4291-5949"
-
-META$authorName2 = "François, Colléoni"
-META$authorAffiliation2 = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
-META$authorIdentifierScheme2 = "ORCID"
-META$authorIdentifier2 = "0009-0006-4142-643X"
-
-META$authorName3 = "Pierre-André, Garambois"
-META$authorAffiliation3 = "UMR RECOVER, INRAE, Aix-Marseille University, Le Tholonet, France"
-META$authorIdentifierScheme3 = "ORCID"
-META$authorIdentifier3 = "0000-0001-8350-6741"
-
-
-META$contributorType = "Data Curator"
-META$contributorName = "Héraut, Louis"
-META$contributorAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
-META$contributorIdentifierScheme = "ORCID"
-META$contributorIdentifier = "0009-0006-4372-0923"
+META$authorIdentifier1 = "0009-0006-4372-0923"
 
 
 META$producerName = "Explore2"
@@ -40,7 +23,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique SMASH pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
+META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique {HM} pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
 Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
 
@@ -75,31 +58,44 @@ META$keywordTermURL1 = "http://opendata.inrae.fr/thesaurusINRAE/c_11593"
 META$keywordVocabulary1 = "INRAETHES"
 META$keywordVocabularyURI1 = "http://opendata.inrae.fr/thesaurusINRAE/thesaurusINRAE"
 
-META$keywordValue2 = "hydrological model"
-META$keywordTermURL2 = "http://opendata.inrae.fr/thesaurusINRAE/c_1352"
+META$keywordValue2 = "indicator"
+META$keywordTermURL2 = "http://opendata.inrae.fr/thesaurusINRAE/c_16171"
 META$keywordVocabulary2 = "INRAETHES"
 META$keywordVocabularyURI2 = "http://opendata.inrae.fr/thesaurusINRAE/thesaurusINRAE"
 
-META$keywordValue3 = "hydrological projection"
+META$keywordValue3 = "temporal aggregation"
 
-META$keywordValue4 = "climate change impacts"
-META$keywordTermURL4 = "http://aims.fao.org/aos/agrovoc/c_13fb5a08"
-META$keywordVocabulary4 = "AGROVOC"
-META$keywordVocabularyURI4 = "http://aims.fao.org/aos/agrovoc/"
+META$keywordValue4 = "hydrological model"
+META$keywordTermURL4 = "http://opendata.inrae.fr/thesaurusINRAE/c_1352"
+META$keywordVocabulary4 = "INRAETHES"
+META$keywordVocabularyURI4 = "http://opendata.inrae.fr/thesaurusINRAE/thesaurusINRAE"
+
+META$keywordValue5 = "hydrological projection"
+
+META$keywordValue6 = "climate change impacts"
+META$keywordTermURL6 = "http://aims.fao.org/aos/agrovoc/c_13fb5a08"
+META$keywordVocabulary6 = "AGROVOC"
+META$keywordVocabularyURI6 = "http://aims.fao.org/aos/agrovoc/"
+
+
+META$topicClassValue = "Hydrologie"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_1108"
 
 
 META$kindOfData = "Dataset"
-META$kindOfDataOther = "Projections hydrologiques (débit)"
+META$kindOfDataOther = "Changements par horizon temporel (débit)"
 META$dataOrigin = "simulation data"
 
-META$softwareName = "SMASH"
+META$softwareName = "{HM}"
 META$softwareVersion = "x"
 META$seriesName = "{RCP}"
 
-# META$publicationCitation = "futur publication"
-# META$publicationIDType = "doi"
-# META$publicationIDNumber = "doi"
-# META$publicationURL = "https://doi.org"
+
+META$relatedDatasetCitation = "Projections hydrologiques Explore2 du débit pour le modèle {HM} sous {RCP}"
+META$relatedDatasetIDType = "doi"
+META$relatedDatasetIDNumber = "{DOI}"
+META$relatedDatasetURL = "{DOI_URL}"
 
 
 META$projectAcronym = "Explore2"
@@ -107,10 +103,12 @@ META$projectTitle = "Explore2 : Des futurs de l'eau"
 META$projectURL = "https://app.inrae.fr/expertise/dossier-le-projet-explore2-des-projections-hydrologiques-pour-adapter-la-gestion-de-la-ressource-en-eau/"
 
 
-META$timePeriodCoveredStart = "1976-01-01"
-META$timePeriodCoveredEnd = "2100-12-31"
+META$timePeriodCoveredStart = "1976-01-01_2005-08-31"
+META$timePeriodCoveredEnd = "{HX_period}"
 
-META$country = "France"
-META$otherGeographicCoverage = "France entière"
+META$country1 = "{country1}"
+META$otherGeographicCoverage1 = "{coverage1}"
+META$country2 = "{country2}"
+META$otherGeographicCoverage2 = "{coverage2}"
 
 META$depositor = "HERAUT, LOUIS"

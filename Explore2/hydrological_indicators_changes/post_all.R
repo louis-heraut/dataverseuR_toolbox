@@ -20,6 +20,7 @@
 
 
 library(dataverseuR)
+# devtools::load_all("/home/lheraut/Documents/INRAE/projects/dataverseuR_project/dataverseuR")
 library(dplyr)
 
 dotenv::load_dot_env(file=".env-entrepot")
@@ -28,7 +29,7 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 to_do = c(
     # "get_metadata"
-    "search_datasets",
+    # "search_datasets"
     # "create_datasets"
     # "modify_datasets"
     # "add_netcdf"
@@ -41,7 +42,7 @@ to_do = c(
 )
 
 dataverse = "explore2-projections_hydrologiques"
-path_to_data = "/media/lheraut/Explore2/projections_hydrologiques/hydrological-projection_daily-time-series_by-chain_merged-netcdf"
+path_to_data = "/media/lheraut/Explore2/hydrological-projections/hydrological-projections_daily-time-series_by-chain_merged-netcdf"
 
 if ("get_metadata" %in% to_do) {
     dataset_DOI = "doi:10.57745/VA7KHZ"
@@ -53,7 +54,9 @@ if ("get_metadata" %in% to_do) {
 if ("search_datasets" %in% to_do) {
     
     query = 'title:"RCP"'
-    publication_status = "DRAFT"
+    publication_status =
+        # "RELEASED"
+        "DRAFT"
     type = "dataset"
     n_search = 1000
     
@@ -78,6 +81,7 @@ if ("create_datasets" %in% to_do |
     metadata_template_dir = "metadata_hydrological_projections"
     metadata_filename = "RDG_metadata"
     Dirpaths = list.dirs(path_to_data, recursive=FALSE)
+    Dirpaths = Dirpaths[grepl("rcp", Dirpaths)]
     Dirs = gsub(".*[/]", "", Dirpaths)
     Info_Dirs = strsplit(Dirs, "_")
     
@@ -119,9 +123,12 @@ if ("create_datasets" %in% to_do |
                 source(metadata_path)
                 res = generate_metadata(metadata_dir=output_dirpath,
                                         metadata_filename=
-                                            metadata_filename)
+                                            metadata_filename,
+                                        verbose=TRUE)
             }
 
+            # stop()
+            
             if ("create_datasets" %in% to_do) {
                 dataset_DOI =
                     create_datasets(dataverse=dataverse,
@@ -140,11 +147,11 @@ if ("create_datasets" %in% to_do |
             }
             
             if ("modify_datasets" %in% to_do) {
-                Sys.sleep(4)
+                Sys.sleep(2)
                 dataset_DOI =
                     modify_datasets(dataverse=dataverse,
                                     dataset_DOI=dataset_DOI,
-                                    metadata_paths=res$metadata_path)
+                                    metadata_path=res$metadata_path)
             }
             if ("add_netcdf" %in% to_do) {
                 nc_Paths = list.files(output_dirpath,
@@ -173,7 +180,6 @@ if ("create_datasets" %in% to_do |
                                    file_paths=README_path)
             }
         }
-        # stop()
     }
 }
 
@@ -252,7 +258,7 @@ if ("delete_datasets" %in% to_do) {
 }
 
 if ("publish_datasets" %in% to_do) {
-    publish_datasets(dataset_DOI=datasets$dataset_DOI, type="major")
+    publish_datasets(dataset_DOI=datasets$dataset_DOI, type="minor")
 }
 
 

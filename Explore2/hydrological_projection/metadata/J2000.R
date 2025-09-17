@@ -1,20 +1,27 @@
 
-META$title = "Projections hydrologiques Explore2 du débit pour le modèle ORCHIDEE sous {RCP}"
+META$title = "Projections hydrologiques Explore2 du débit pour le modèle J2000 sous {RCP}"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Agnès, Ducharne"
-META$datasetContactAffiliation = "Sorbonne Université/CNRS/EPHE, METIS-IPSL, Paris, France"
-META$datasetContactEmail = "agnes.ducharne@upmc.fr"
+META$datasetContactName = "Branger, Flora"
+META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"
+META$datasetContactEmail = "flora.branger@inrae.fr"
 
 
-META$authorName1 = "Agnès, Ducharne"
-META$authorAffiliation1 = "Sorbonne Université/CNRS/EPHE, METIS-IPSL, Paris, France"
+META$authorName1 = "Branger, Flora"
+META$authorAffiliation1 = "INRAE, UR RiverLy, Villeurbanne, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0002-6550-3413"
+META$authorIdentifier1 = "0000-0003-4273-8938"
 
-META$authorName2 = "Peng, Huang"
-META$authorAffiliation2 = "Sorbonne Université/CNRS/EPHE, METIS-IPSL, Paris, France"
+META$authorName2 = "Bonneau, Jérémie"
+META$authorAffiliation2 = "INSA Lyon, DEEP, Villeurbanne, France"
+META$authorIdentifierScheme2 = "ORCID"
+META$authorIdentifier2 = "0000-0003-1161-1993"
+
+META$authorName3 = "Mimeau, Louise"
+META$authorAffiliation3 = "INRAE, UR RiverLy, Villeurbanne, France"
+META$authorIdentifierScheme3 = "ORCID"
+META$authorIdentifier3 = "0000-0002-3437-5746"
 
 
 META$contributorType = "Data Curator"
@@ -33,7 +40,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique ORCHIDEE pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
+META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique J2000 pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
 Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
 
@@ -80,20 +87,17 @@ META$keywordTermURL4 = "http://aims.fao.org/aos/agrovoc/c_13fb5a08"
 META$keywordVocabulary4 = "AGROVOC"
 META$keywordVocabularyURI4 = "http://aims.fao.org/aos/agrovoc/"
 
+META$topicClassValue = "Hydrologie"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_1108"
 
 META$kindOfData = "Dataset"
 META$kindOfDataOther = "Projections hydrologiques (débit)"
 META$dataOrigin = "simulation data"
 
-META$softwareName = "ORCHIDEE"
+META$softwareName = "J2000"
 META$softwareVersion = "x"
 META$seriesName = "{RCP}"
-
-
-# META$publicationCitation = "futur publication"
-# META$publicationIDType = "doi"
-# META$publicationIDNumber = "doi"
-# META$publicationURL = "https://doi.org"
 
 
 META$projectAcronym = "Explore2"
@@ -104,7 +108,9 @@ META$projectURL = "https://app.inrae.fr/expertise/dossier-le-projet-explore2-des
 META$timePeriodCoveredStart = "1976-01-01"
 META$timePeriodCoveredEnd = "2100-12-31"
 
-META$country = "France"
-META$otherGeographicCoverage = "France entière"
+META$country1 = "France"
+META$otherGeographicCoverage1 = "Loire"
+META$country2 = "France"
+META$otherGeographicCoverage2 = "Rhône"
 
 META$depositor = "HERAUT, LOUIS"

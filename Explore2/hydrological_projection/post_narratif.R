@@ -28,6 +28,7 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 
 to_do = c(
+    # "get_metadata"
     "search_datasets"
     # "create_datasets"
     # "modify_datasets"
@@ -35,16 +36,23 @@ to_do = c(
     # "add_readme"
 )
 
-dataverse = "explore2"
+dataverse = "explore2-projections_hydrologiques"
+
+
+if ("get_metadata" %in% to_do) {
+    dataset_DOI = "doi:10.57745/VA7KHZ"
+    metadata = get_datasets_metadata(dataset_DOI=dataset_DOI)
+    convert_metadata(metadata)
+}
 
 
 if ("search_datasets" %in% to_do) {
 
-    query = 'title:"SAFRAN"'
+    query = "title:'Ensemble_des_narratifs'"
     publication_status = "RELEASED"
     type = "dataset"
     n_search = 1000
-
+    
     datasets =
         search_datasets(query=query,
                         publication_status=publication_status,
@@ -60,9 +68,10 @@ if ("create_datasets" %in% to_do |
 
     metadata_template_dir = "metadata_hydrological_projections"
     metadata_filename = "RDG_metadata"
-    path_to_data = "/media/lheraut/Explore2/projections_hydrologiques/hydrological-projection_daily-time-series_by-chain_merged-netcdf/debit_SAFRAN_all"
+    path_to_data = "/media/lheraut/Explore2/hydrological-projections/hydrological-projections_daily-time-series_by-chain_merged-netcdf/debit_narratifs_all"
+
     
-    metadata_template_path = file.path(metadata_template_dir, "SAFRAN.R")
+    metadata_template_path = file.path(metadata_template_dir, "narratifs.R")
     metadata_path = file.path(path_to_data,
                               paste0(metadata_filename, ".R"))
 
@@ -104,7 +113,7 @@ if ("create_datasets" %in% to_do |
                                 datasets$citation)
         
         README_template_path =
-            file.path(metadata_template_dir, "README_SAFRAN.txt")
+            file.path(metadata_template_dir, "README_narratifs.txt")
         README_file = readLines(README_template_path)
         id = which(grepl("[{]CITE[}]", README_file))
         README_file = c(README_file[1:(id-1)],

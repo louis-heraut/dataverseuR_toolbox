@@ -1,0 +1,26 @@
+Changements par horizon TRACC (débit)
+Séries par horizon TRACC (débit)
+Séries par horizon TRACC (débit)
+Changements par horizon temporel (débit)
+Séries par horizon temporel (débit)
+Séries annuelles (débit)
+
+Projections hydrologiques (débit) - Ensemble
+Projections hydrologiques (débit) - Narratifs
+Projections hydrologiques (débit) - SAFRAN
+Projections hydrologiques (recharge)
+
+
+META$topicClassValue = "Climat"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_341"
+
+META$topicClassValue = "Hydrologie"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_1108"
+
+META$topicClassValue = "Recharge"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_4746"
+
+META$topicClassValue = "Extrême"

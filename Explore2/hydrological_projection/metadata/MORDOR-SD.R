@@ -1,20 +1,20 @@
 
-META$title = "Projections hydrologiques Explore2 du débit pour le modèle MORDOR-TS sous {RCP}"
+META$title = "Projections hydrologiques Explore2 du débit pour le modèle MORDOR-SD sous {RCP}"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Céline, Monteil"
-META$datasetContactAffiliation = "Département LNHE, EDF-R&D, 78401 Chatou, France"
-META$datasetContactEmail = "celine-c.monteil@edf.fr"
+META$datasetContactName = "Le Lay, Matthieu"
+META$datasetContactAffiliation = "Département Eau Environnement, EDF-DTG, Saint Martin le Vinoux, France"
+META$datasetContactEmail = "matthieu.le-lay@edf.fr"
 
 
-META$authorName1 = "Céline, Monteil"
-META$authorAffiliation1 = "Département LNHE, EDF-R&D, 78401 Chatou, France"
+META$authorName1 = "Le Lay, Matthieu"
+META$authorAffiliation1 = "Département Eau Environnement, EDF-DTG, Saint Martin le Vinoux, France"
 META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0001-5695-8910"
+META$authorIdentifier1 = "0000-0002-0865-7125"
 
-META$authorName2 = "Frédéric, Hendrickx"
-META$authorAffiliation2 = "Département LNHE, EDF-R&D, 78401 Chatou, France"
+META$authorName2 = "Gailhard, Joël"
+META$authorAffiliation2 = "Département Eau Environnement, EDF-DTG, Saint Martin le Vinoux, France"
 
 
 META$contributorType = "Data Curator"
@@ -33,7 +33,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique MORDOR-TS pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
+META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique MORDOR-SD pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
 Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
 
@@ -80,19 +80,17 @@ META$keywordTermURL4 = "http://aims.fao.org/aos/agrovoc/c_13fb5a08"
 META$keywordVocabulary4 = "AGROVOC"
 META$keywordVocabularyURI4 = "http://aims.fao.org/aos/agrovoc/"
 
+META$topicClassValue = "Hydrologie"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_1108"
 
 META$kindOfData = "Dataset"
 META$kindOfDataOther = "Projections hydrologiques (débit)"
 META$dataOrigin = "simulation data"
 
-META$softwareName = "MORDOR-TS"
+META$softwareName = "MORDOR-SD"
 META$softwareVersion = "x"
 META$seriesName = "{RCP}"
-
-# META$publicationCitation = "futur publication"
-# META$publicationIDType = "doi"
-# META$publicationIDNumber = "doi"
-# META$publicationURL = "https://doi.org"
 
 
 META$projectAcronym = "Explore2"
@@ -104,6 +102,6 @@ META$timePeriodCoveredStart = "1976-01-01"
 META$timePeriodCoveredEnd = "2100-12-31"
 
 META$country = "France"
-META$otherGeographicCoverage = "Loire"
+META$otherGeographicCoverage = "France entière"
 
 META$depositor = "HERAUT, LOUIS"

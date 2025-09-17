@@ -1,27 +1,15 @@
 
-META$title = "Projections hydrologiques Explore2 du débit pour le modèle GRSD sous {RCP}"
+META$title = "Projections hydrologiques Explore2 du débit pour le modèle SIM2 sous {RCP}"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
-META$datasetContactName = "Guillaume, Thirel"
-META$datasetContactAffiliation = "Université de Toulouse, CNES/IRD/CNRS/INRAE, CESBIO, Toulouse, France"
-META$datasetContactEmail = "guillaume.thirel@inrae.fr"
+META$datasetContactName = "Rousset, Fabienne"
+META$datasetContactAffiliation = "Météo France, Direction de la Climatologie et des Services Climatiques, Toulouse, France"
+META$datasetContactEmail = "fabienne.rousset@meteo.fr"
 
 
-META$authorName1 = "Guillaume, Thirel"
-META$authorAffiliation1 = "Université de Toulouse, CNES/IRD/CNRS/INRAE, CESBIO, Toulouse, France"
-META$authorIdentifierScheme1 = "ORCID"
-META$authorIdentifier1 = "0000-0002-1444-1830"
-
-META$authorName2 = "Charles, Perrin"
-META$authorAffiliation2 = "Université Paris-Saclay, INRAE, UR HYCAR, Antony, France"
-META$authorIdentifierScheme2 = "ORCID"
-META$authorIdentifier2 = "0000-0001-8552-1881"
-
-META$authorName3 = "Laurent, Strohmenger"
-META$authorAffiliation3 = "Department of Ecohydrology and Biogeochemistry, Leibniz Institute of Freshwater Ecology and Inland Fisheries (IGB), Berlin, Germany"
-META$authorIdentifierScheme3 = "ORCID"
-META$authorIdentifier3 = "0000-0003-4315-0968"
+META$authorName1 = "Rousset, Fabienne"
+META$authorAffiliation1 = "Météo France, Direction de la Climatologie et des Services Climatiques, Toulouse, France"
 
 
 META$contributorType = "Data Curator"
@@ -40,7 +28,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique GRSD pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
+META$dsDescriptionValue = "Débit journalier simulé par le modèle hydrologique SIM2 pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de la concaténation des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement sur le portail <a href='https://www.drias-eau.fr/commande' target='blank_'>https://www.drias-eau.fr/commande</a>.<br><br>
 
 Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction de biais. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans les métadonnées des fichiers NetCDF et le rapport <a href='https://doi.org/10.57745/PUR7ML' target='blank_'>https://doi.org/10.57745/PUR7ML </a>.<br><br>
 
@@ -87,19 +75,17 @@ META$keywordTermURL4 = "http://aims.fao.org/aos/agrovoc/c_13fb5a08"
 META$keywordVocabulary4 = "AGROVOC"
 META$keywordVocabularyURI4 = "http://aims.fao.org/aos/agrovoc/"
 
+META$topicClassValue = "Hydrologie"
+META$topicClassVocab = "INRAE Thésaurus"
+META$topicClassVocabURI = "http://opendata.inrae.fr/thesaurusINRAE/c_1108"
 
 META$kindOfData = "Dataset"
 META$kindOfDataOther = "Projections hydrologiques (débit)"
 META$dataOrigin = "simulation data"
 
-META$softwareName = "GRSD"
+META$softwareName = "SIM2"
 META$softwareVersion = "x"
 META$seriesName = "{RCP}"
-
-# META$publicationCitation = "futur publication"
-# META$publicationIDType = "doi"
-# META$publicationIDNumber = "doi"
-# META$publicationURL = "https://doi.org"
 
 
 META$projectAcronym = "Explore2"

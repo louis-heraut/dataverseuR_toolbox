@@ -19,7 +19,8 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-library(dataverseuR)
+# library(dataverseuR)
+devtools::load_all("../../../dataverseuR_project/dataverseuR/")
 
 dotenv::load_dot_env(file=".env-entrepot")
 # dotenv::load_dot_env(file=".env-demo")
@@ -69,11 +70,11 @@ if ("search_datasets" %in% to_do) {
 
 
 if ("get_metrics" %in% to_do) {
-    datasets_metrics = get_datasets_metrics(datasets$DOI)
+    datasets_metrics = get_datasets_metrics(datasets$dataset_DOI)
     datasets = dplyr::full_join(datasets, datasets_metrics,
                                 by="dataset_DOI")
 
-    datasets_size = get_datasets_size(datasets$DOI)
+    datasets_size = get_datasets_size(datasets$dataset_DOI)
     datasets = dplyr::full_join(datasets, datasets_size,
                                 by="dataset_DOI")
     
