@@ -29,20 +29,27 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 to_do = c(
     # "get_metadata"
-    # "search_datasets"
+    "search_datasets",
     # "create_datasets"
-    # "modify_datasets"
+    "modify_datasets"
     # "add_netcdf"
     # "add_readme"
     # "rename_files"
     # "delete_files"
     # "delete_readme"
     # "delete_datasets"
-    "publish_datasets"
+    # "publish_datasets"
 )
 
-dataverse = "explore2-projections_hydrologiques"
-path_to_data = "/media/lheraut/Explore2/hydrological-projections/hydrological-projections_daily-time-series_by-chain_merged-netcdf"
+dataverse = "explore2-indicateurs_hydrologiques-changements_TRACC"
+path_to_data =
+    "/media/lheraut/Explore2/hydrological-projections_indicators-TRACC/hydrological-projections_indicators-TRACC_changes-by-warming-level-ref-1976-2005_by-chain_parquet"
+metadata_template_dir = "metadata"
+metadata_filename = "RDG_metadata"
+datasets_info_file = "datasets_info.csv"
+datasets_info = ASHE::read_tibble(file.path(metadata_template_dir,
+                                            datasets_info_file))
+
 
 if ("get_metadata" %in% to_do) {
     dataset_DOI = "doi:10.57745/VA7KHZ"
@@ -53,7 +60,7 @@ if ("get_metadata" %in% to_do) {
 
 if ("search_datasets" %in% to_do) {
     
-    query = 'title:"RCP"'
+    query = 'title:"RCP" AND -title:"ensemble"'
     publication_status =
         # "RELEASED"
         "DRAFT"
@@ -66,7 +73,8 @@ if ("search_datasets" %in% to_do) {
                         type=type,
                         dataverse=dataverse,
                         n_search=n_search)
-    datasets
+    datasets = dplyr::arrange(datasets, name)
+    datasets$name
 }
 
 
@@ -75,45 +83,85 @@ if ("create_datasets" %in% to_do |
     "add_netcdf" %in% to_do |
     "add_readme" %in% to_do) {
 
+    stop_at_EXP =
+        TRUE
+        # FALSE
     nEXP_start = 1
     nHM_start = 1
 
-    metadata_template_dir = "metadata_hydrological_projections"
-    metadata_filename = "RDG_metadata"
     Dirpaths = list.dirs(path_to_data, recursive=FALSE)
     Dirpaths = Dirpaths[grepl("rcp", Dirpaths)]
     Dirs = gsub(".*[/]", "", Dirpaths)
     Info_Dirs = strsplit(Dirs, "_")
     
-    EXP_all = sapply(Info_Dirs, "[[", 2) 
-    EXP = c("RCP 2.6"="historical-rcp26",
-            "RCP 4.5"="historical-rcp45",
-            "RCP 8.5"="historical-rcp85")
+    EXP_all = sapply(Info_Dirs, "[[", 1) 
+    EXP = c("RCP 8.5"="historical-rcp85")
     nEXP = length(EXP)
     
-    HM_all = sapply(Info_Dirs, "[[", 3) 
+    HM_all = sapply(Info_Dirs, "[[", 2) 
     HM = unique(HM_all)
     HM = HM[HM != "all"]
     nHM = length(HM)
     
     for (i in nEXP_start:nEXP) {
+        print(paste0("* ", i))
         exp = EXP[i]
         exp_name = names(EXP)[i]
 
         for (j in nHM_start:nHM) {
+            print(paste0("** ", j))
             hm = HM[j]
             
             output_dirpath = Dirpaths[grepl(exp, Dirs) &
                                       grepl(hm, Dirs)]
-            
+            dataset_info = dplyr::filter(datasets_info,
+                                         HM == hm &
+                                         EXP == exp)
+
             if ("create_datasets" %in% to_do |
                 "modify_datasets" %in% to_do) {
                 metadata_template_path =
-                    file.path(metadata_template_dir,
-                              paste0(hm, ".R"))
+                    file.path(metadata_template_dir, "all.R")
                 metadata_file = readLines(metadata_template_path)
                 metadata_file = gsub("[{]RCP[}]",
                                      exp_name, metadata_file)
+                metadata_file = gsub("[{]HM[}]",
+                                     hm, metadata_file)
+
+                metadata_file = gsub("[{]citation1[}]",
+                                     gsub("\"", "'",
+                                          dataset_info$citation1),
+                                     metadata_file)
+                metadata_file = gsub("[{]DOI1[}]",
+                                     dataset_info$doi1,
+                                     metadata_file)
+                metadata_file = gsub("[{]URL1[}]",
+                                     dataset_info$url1,
+                                     metadata_file)
+
+                metadata_file = gsub("[{]citation2[}]",
+                                     gsub("\"", "'",
+                                          dataset_info$citation2),
+                                     metadata_file)
+                metadata_file = gsub("[{]DOI2[}]",
+                                     dataset_info$doi2,
+                                     metadata_file)
+                metadata_file = gsub("[{]URL2[}]",
+                                     dataset_info$url2,
+                                     metadata_file)
+                
+                metadata_file = gsub("[{]coverage1[}]",
+                                     dataset_info$coverage1,
+                                     metadata_file)
+                if (nchar(dataset_info$coverage2) == 0) {
+                    Ok = !grepl("country2", metadata_file) &
+                        !grepl("coverage2", metadata_file)
+                    metadata_file = metadata_file[Ok]
+                } else {
+                    metadata_file = gsub("[{]coverage2[}]",
+                                         dataset_info$coverage2,
+                                         metadata_file)
+                }
                 metadata_path = file.path(output_dirpath,
                                           paste0(metadata_filename,
                                                  ".R"))
@@ -132,7 +180,7 @@ if ("create_datasets" %in% to_do |
             if ("create_datasets" %in% to_do) {
                 dataset_DOI =
                     create_datasets(dataverse=dataverse,
-                                    metadata_paths=
+                                    metadata_path=
                                         res$metadata_path)
             }
 
@@ -147,11 +195,11 @@ if ("create_datasets" %in% to_do |
             }
             
             if ("modify_datasets" %in% to_do) {
-                Sys.sleep(2)
                 dataset_DOI =
                     modify_datasets(dataverse=dataverse,
                                     dataset_DOI=dataset_DOI,
                                     metadata_path=res$metadata_path)
+                Sys.sleep(10)
             }
             if ("add_netcdf" %in% to_do) {
                 nc_Paths = list.files(output_dirpath,
@@ -180,6 +228,7 @@ if ("create_datasets" %in% to_do |
                                    file_paths=README_path)
             }
         }
+        if (stop_at_EXP) stop()
     }
 }
 
@@ -254,7 +303,7 @@ if ("delete_readme" %in% to_do) {
 
 
 if ("delete_datasets" %in% to_do) {
-    delete_datasets(dataset_DOI=dataset_DOI)
+    delete_datasets(dataset_DOI=datasets$dataset_DOI)
 }
 
 if ("publish_datasets" %in% to_do) {

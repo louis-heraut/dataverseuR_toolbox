@@ -1,8 +1,8 @@
-Changements par horizon TRACC (débit)
-Séries par horizon TRACC (débit)
-Séries par horizon TRACC (débit)
-Changements par horizon temporel (débit)
-Séries par horizon temporel (débit)
+Changements par horizons TRACC (débit)
+Séries par horizons TRACC (débit)
+Séries par horizons TRACC (débit)
+Changements par horizons temporels (débit)
+Séries par horizons temporels (débit)
 Séries annuelles (débit)
 
 Projections hydrologiques (débit) - Ensemble

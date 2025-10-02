@@ -1,6 +1,5 @@
 
 META$title = "Ensemble des narratifs des projections hydrologiques Explore2 du débit"
-META$alternativeTitle = "Collection Explore2 - Narratifs dans les projections hydrologiques"
 
 META$datasetContactName = "Sauquet, Éric"
 META$datasetContactAffiliation = "INRAE, UR RiverLy, Villeurbanne, France"

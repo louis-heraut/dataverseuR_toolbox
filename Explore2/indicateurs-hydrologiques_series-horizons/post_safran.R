@@ -28,37 +28,37 @@ dotenv::load_dot_env(file=".env-entrepot")
 
 
 to_do = c(
-    # "get_metadata"
-    "search_datasets"
+    "search_datasets",
     # "create_datasets"
-    # "modify_datasets"
+    "modify_datasets"
     # "add_netcdf"
     # "add_readme"
 )
 
-dataverse = "explore2-projections_hydrologiques"
+dataverse = "explore2-indicateurs_hydrologiques-series_horizons"
+path_to_data =
+    "/media/lheraut/Explore2/hydrological-projections_indicators/hydrological-projections_indicators_series-by-horizon_by-chain_parquet/SAFRAN_all/"
+metadata_template_dir = "metadata"
+metadata_filename = "RDG_metadata"
 
-
-if ("get_metadata" %in% to_do) {
-    dataset_DOI = "doi:10.57745/VA7KHZ"
-    metadata = get_datasets_metadata(dataset_DOI=dataset_DOI)
-    convert_metadata(metadata)
-}
 
 
 if ("search_datasets" %in% to_do) {
 
-    query = "title:'Ensemble_des_narratifs'"
-    publication_status = "RELEASED"
+    query = 'title:"ensemble" AND -title:"narratifs" AND title:"SAFRAN"'
+    publication_status =
+        # "RELEASED"
+        "DRAFT"
     type = "dataset"
     n_search = 1000
-    
+
     datasets =
         search_datasets(query=query,
                         publication_status=publication_status,
                         type=type,
                         dataverse=dataverse,
                         n_search=n_search)
+    datasets$name
 }
 
 if ("create_datasets" %in% to_do |
@@ -66,18 +66,13 @@ if ("create_datasets" %in% to_do |
     "add_netcdf" %in% to_do |
     "add_readme" %in% to_do) {
 
-    metadata_template_dir = "metadata_hydrological_projections"
-    metadata_filename = "RDG_metadata"
-    path_to_data = "/media/lheraut/Explore2/hydrological-projections/hydrological-projections_daily-time-series_by-chain_merged-netcdf/debit_narratifs_all"
-
-    
-    metadata_template_path = file.path(metadata_template_dir, "narratifs.R")
+    metadata_template_path = file.path(metadata_template_dir, "SAFRAN.R")
     metadata_path = file.path(path_to_data,
                               paste0(metadata_filename, ".R"))
 
     if ("create_datasets" %in% to_do |
         "modify_datasets" %in% to_do) {
-        file.copy(metadata_template_path, metadata_path)
+        file.copy(metadata_template_path, metadata_path, overwrite=TRUE)
         
         initialise_metadata()
         source(metadata_template_path)
@@ -113,7 +108,7 @@ if ("create_datasets" %in% to_do |
                                 datasets$citation)
         
         README_template_path =
-            file.path(metadata_template_dir, "README_narratifs.txt")
+            file.path(metadata_template_dir, "README_SAFRAN.txt")
         README_file = readLines(README_template_path)
         id = which(grepl("[{]CITE[}]", README_file))
         README_file = c(README_file[1:(id-1)],

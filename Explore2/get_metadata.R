@@ -32,7 +32,7 @@ to_do = c(
 
 
 if ("get_metadata" %in% to_do) {
-    dataset_DOI = "doi:10.57745/FGAOCD"
+    dataset_DOI = "doi:10.57745/VBNFOR"
     metadata = get_datasets_metadata(dataset_DOI=dataset_DOI)
     convert_metadata(metadata)
 }

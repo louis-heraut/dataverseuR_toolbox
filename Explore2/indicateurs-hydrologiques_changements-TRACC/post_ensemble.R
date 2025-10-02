@@ -26,15 +26,18 @@ dotenv::load_dot_env(file=".env-entrepot")
 # dotenv::load_dot_env(file=".env-demo")
 
 
-
 to_do = c(
     # "get_metadata"
-    "search_datasets"
+    "search_datasets",
     # "create_datasets"
-    # "modify_datasets"
+    "modify_datasets"
 )
 
-dataverse = "explore2-projections_hydrologiques"
+dataverse = "explore2-indicateurs_hydrologiques-changements_TRACC"
+path_to_data =
+    "/media/lheraut/Explore2/hydrological-projections_indicators-TRACC/hydrological-projections_indicators-TRACC_changes-by-warming-level-ref-1976-2005_by-chain_parquet"
+metadata_template_dir = "metadata"
+metadata_filename = "RDG_metadata"
 
 
 if ("get_metadata" %in% to_do) {
@@ -46,8 +49,10 @@ if ("get_metadata" %in% to_do) {
 
 if ("search_datasets" %in% to_do) {
 
-    query = 'title:"ensemble des projections"'
-    publication_status = "RELEASED"
+    query = 'title:"ensemble" AND -title:"narratifs" AND -title:"RCP"'
+    publication_status =
+        # "RELEASED"
+        "DRAFT"
     type = "dataset"
     n_search = 1000
     
@@ -57,21 +62,18 @@ if ("search_datasets" %in% to_do) {
                         type=type,
                         dataverse=dataverse,
                         n_search=n_search)
+    datasets = dplyr::arrange(datasets, name)
     datasets
 }
 
 if ("create_datasets" %in% to_do |
     "modify_datasets" %in% to_do) {
-
-    metadata_template_dir = "metadata_hydrological_projections"
-    metadata_filename = "RDG_metadata"
-    path_to_data = "/media/lheraut/Explore2/hydrological-projections/hydrological-projections_daily-time-series_by-chain_merged-netcdf"
-    
-    metadata_template_path = file.path(metadata_template_dir, "all.R")
+    metadata_template_path = file.path(metadata_template_dir,
+                                       "ensemble.R")
     metadata_path = file.path(path_to_data,
                               paste0(metadata_filename, ".R"))
     
-    file.copy(metadata_template_path, metadata_path)
+    file.copy(metadata_template_path, metadata_path, overwrite=TRUE)
     
     initialise_metadata()
     source(metadata_template_path)

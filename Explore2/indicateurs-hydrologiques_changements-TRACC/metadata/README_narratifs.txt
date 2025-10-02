@@ -32,6 +32,9 @@ RESSOURCES ___________________________________________________________
   https://entrepot.recherche.data.gouv.fr/dataverse/explore2
 - Retrouvez les messages et enseignements du projet Explore2 :
   https://doi.org/10.57745/J3XIPW
+- Retrouvez les messages et enseignements du projet Explore2
+  selon les niveaux de réchauffement fixés par la TRACC :
+  https://doi.org/10.57745/SRZ8I9
 - Dossier INRAE / Appui aux Politiques Publiques :
   https://app.inrae.fr/expertise/dossier-le-projet-explore2-des-projections-hydrologiques-pour-adapter-la-gestion-de-la-ressource-en-eau/
 - Accès aux données DRIAS climat pour les projections climatiques :
@@ -41,7 +44,12 @@ RESSOURCES ___________________________________________________________
 - Accès aux données Recherche Data Gouv pour les projections
   hydrologiques :
   https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques
+- Accès aux données Recherche Data Gouv pour les indicateurs
+  issus des projections hydrologiques :
+  https://entrepot.recherche.data.gouv.fr/dataverse/explore2-indicateurs_hydrologiques
 - Visualisation des données : https://meandre.explore2.inrae.fr/
+- Visualisation des données par niveaux de réchauffement TRACC :
+  https://meandre-tracc.explore2.inrae.fr/
 - Formation : https://e-learning.oieau.fr/enrol/index.php?id=3799
 - Séminaire de restitution du 28 juin 2024 :
   https://www.seminaire-explore2-lifeeauclimat.oieau.fr/
@@ -50,8 +58,18 @@ RESSOURCES ___________________________________________________________
 
 
 CONTACT ______________________________________________________________
-Privilégiez les contacts propres à chaque modèle indiqué dans les
-fichiers NetCDF.
+Pour les projections hydrologiques journalières, privilégiez les
+contacts propres à chaque modèle indiqué dans les fichiers NetCDF.
+
+Pour les indicateurs hydrologiques :
+- Héraut, Louis, ingénieur et data manager *1
+  <louis.heraut@inrae.fr>
+- Sauquet, Éric, directeur de recherche et project manager *1
+  <eric.sauquet@inrae.fr>
+- Vidal, Jean-Philippe, directeur de recherche *1
+  <jean-philippe.vidal@inrae.fr>
+
+1* INRAE, UR RiverLy, Villeurbanne, France
 
 
 ATTENTIONS CONCERNANT LES PROJECTIONS ________________________________
@@ -77,21 +95,32 @@ L'approche multi-modèle doit être privilégiée :
 
 En cas de doutes, retrouvez les messages et enseignements
 du projet Explore2 : https://doi.org/10.57745/J3XIPW
+Et par niveaux de réchauffement fixés par la TRACC :
+https://doi.org/10.57745/SRZ8I9
 
 
 DESCRIPTION DES DONNÉES ______________________________________________
-Débit journalier simulé par le modèle hydrologique {HM} pour
-l'ensemble des projections climatiques Explore2 sous {RCP}.
-Ces fichiers résultent de la concaténation des simulations
+Ensemble des changements par horizons TRACC d'indicateurs associés aux
+chaînes de simulations de débits journaliers issus de 9 modèles
+hydrologiques pour la sélection des narratifs hydrologiques Explore2
+sous RCP 8.5 par niveau de réchauffement et secteur hydrographique.
+Ces fichiers résultent de l'agrégation temporelle des simulations
 hydrologiques sous runs historiques (avant 2005) et des projections
 hydrologiques (post 2005), fichiers NetCDF disponibles au
-téléchargement sur le portail Drias Eau
-(https://www.drias-eau.fr/commande).
+téléchargement dans la collection Explore2 - Projections hydrologiques
+https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques.
 
-Ce dépôt regroupe un fichier NetCDF par couple GCM/RCM et correction
-de biais. Retrouvez davantage d'information sur la chaîne de
-modélisation du climat dans les métadonnées des fichiers NetCDF et le
-rapport https://doi.org/10.57745/PUR7ML.
+Ce dépôt regroupe un tableau 2D par indicateur et chaîne de simulation
+par narratif pour chaque modèle hydrologique, c'est-à-dire, scénario
+d'émission RCP, couple GCM/RCM, correction de biais BC et modèle
+hydrologique HM. Ces données sont brutes et contiennent donc des
+chaînes de projections jugées aberrantes / horsains qu'il est possible
+de filter grâce à des métadonnées supplémentaires
+https://doi.org/10.57745/YZNENQ. Pour des raisons techniques, ces
+indicateurs sont regroupés par dossiers compressés selon les
+différentes parties du régime hydrologique. Retrouvez davantage
+d'information sur la chaîne de modélisation du climat dans le rapport
+https://doi.org/10.57745/PUR7ML.
 
 La description des modèles hydrologiques utilisés est disponible dans
 les annexes du rapport https://doi.org/10.57745/S6PQXD. Retrouvez le
@@ -99,30 +128,51 @@ diagnostic des modèles hydrologiques résumé à l'échelle des régions
 hydrologiques dans les fiches téléchargeables ici :
 https://doi.org/10.57745/DMFUXW.
 
+Définition des 4 narratifs hydrologiques :
+L'ensemble des descriptions des narratifs hydrologique définit dans
+le cadre de la TRACC par niveau de réchauffement est défini ici :
+https://doi.org/10.57745/KAHIWJ.
+
 Métadonnées supplémentaires :
-- Description de l'ensemble des chaînes de modélisations :
+- Récapitulatif de l'ensemble des indicateurs hydrologiques :
+  href='https://doi.org/10.57745/JVNHQL
+- Récapitulatif de l'ensemble des chaînes de simulation :
   https://doi.org/10.57745/R6HG5X
 - Description de l'ensemble des points de simulation :
   https://doi.org/10.57745/UTKWR5
 - Liste des simulations des chaînes de projections jugées aberrantes
   / horsains : https://doi.org/10.57745/YZNENQ
+- Récapitulatif des années pivots utilisées pour la TRACC :
+  https://doi.org/10.57745/DCOQM6
 
 Décomposition des chaînes de caractère formant le nom des fichiers
-NetCDF, séparées par des "_" :
-{1}:  Variable : Nom de la variable (avec Adjust si les données sont
-      corrigées)
-{2}:  Domain : Couverture spatiale des données
-{3}:  GCM-Inst-Model : Identifiant du GCM forçeur = Institut-Modèle
-{4}:  Experiment : Identifiant de l’expérience historique ou future
-      via le scénario
-{5}:  Member : Numéro du membre de l'ensemble
-{6}:  RCM-Inst-Model : Identifiant du RCM = Institut-Modèle
-{7}:  Version : Identifiant de l’expérience historique ou future via
-      le scénario
-{8}:  Bc-Inst-Method-Obs-Period : Identifiant de la méthode de
-      correction de biais statistique =
-      Institut-Méthode-Réanalyse-Période
-{9}:  HYDRO-Inst-Model : Identifiant du HYDRO = Institut-Modèle
-{10}: TimeFrequency : Pas de temps du jeu de données
-{11}: Startyear-Endyear : Couverture temporelle des données sous forme
-      YYYYMMDD-YYYYMMDD
+parquet, séparées par des "_" :
+{1}  Indicateur : Le nom de l’indicateur, du type de statistique
+     observée
+{2}  Échantillonnage : Échantillonnage temporel sur laquelle est
+     calculé l’indicateur
+-> {1}_{2} Variable : Variable résultante d'un indicateur
+           temporellement contextualisé
+{3}  RWL : Horizon TRACC (RWL-(20|27|40))
+-> {1}_{2}_{3} Changement : Changement d'une variable pour un horizon
+               TRACC par rapport à une période de référence, défini
+	       dans le récapitulatif des indicateurs
+	       hydrologiques https://doi.org/10.57745/JVNHQL
+{4}  EXP : Identifiant de l’expérience historique ou future via le
+     scénario
+{5}  GCM : Identifiant du GCM forçeur
+{6}  RCM : Identifiant du RCM
+{7}  BC : Identifiant de la méthode de correction de biais statistique
+{8}  HM : Identifiant du modèle hydrologique
+{9}  référence : Période de référence (ref-YYYYMMDD-YYYYMMDD)
+
+Les colonnes des fichier parquet sont :
+- EXP : Voir ci-dessus
+- GCM : Voir ci-dessus
+- RCM : Voir ci-dessus
+- BC : Voir ci-dessus
+- HM : Voir ci-dessus
+- code : Code à 10 caractère du point de simulation fourni dans la
+  description des points de simualtion https://doi.org/10.57745/UTKWR5
+- *variable* : Variable annuelle définie dans le récapitulatif des
+  indicateurs hydrologiques https://doi.org/10.57745/JVNHQL
