@@ -33,6 +33,7 @@ to_do = c(
     # "modify_datasets"
     # "add_file"
     "add_readme"
+    # "delete_readme"
 )
 
 dataverse = "explore2-indicateurs_hydrologiques-series_annuelles"
@@ -122,9 +123,11 @@ if ("create_datasets" %in% to_do |
     }
 }
 
-
-
-
-
+if ("delete_readme" %in% to_do) {
+    files = list_datasets_files(datasets$dataset_DOI)
+    readmes = dplyr::filter(files, grepl("README", label))
+    delete_datasets_files(file_DOI=readmes$id,
+                          is_DOI_ID=TRUE)
+}
 
 

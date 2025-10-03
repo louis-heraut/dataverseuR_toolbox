@@ -199,7 +199,6 @@ if ("create_datasets" %in% to_do |
                     modify_datasets(dataverse=dataverse,
                                     dataset_DOI=dataset_DOI,
                                     metadata_path=res$metadata_path)
-                Sys.sleep(10)
             }
             if ("add_file" %in% to_do) {
                 file_Paths = list.files(output_dirpath,

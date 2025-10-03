@@ -32,7 +32,7 @@ to_do = c(
     "search_datasets",
     # "create_datasets"
     # "modify_datasets"
-    "add_file"
+    # "add_file"
     # "add_readme"
     # "rename_files"
     # "delete_files"
@@ -87,7 +87,7 @@ if ("create_datasets" %in% to_do |
     stop_at_EXP =
         # TRUE
         FALSE
-    nEXP_start = 2
+    nEXP_start = 3
     nHM_start = 1
 
     Dirpaths = list.dirs(path_to_data, recursive=FALSE)

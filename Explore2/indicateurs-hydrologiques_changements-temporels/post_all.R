@@ -31,9 +31,9 @@ to_do = c(
     # "get_metadata"
     "search_datasets",
     # "create_datasets"
-    "modify_datasets"
+    # "modify_datasets"
     # "add_file"
-    # "add_readme"
+    "add_readme"
     # "rename_files"
     # "delete_files"
     # "delete_readme"
@@ -200,14 +200,7 @@ if ("create_datasets" %in% to_do |
                 dataset_DOI =
                     modify_datasets(dataverse=dataverse,
                                     dataset_DOI=dataset_DOI,
-                                    metadata_path=res$metadata_path,
-                                    wait_time=2)
-# curl -H "X-Dataverse-key: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -X PUT "https://demo.dataverse.org/api/datasets/:persistentId/versions/:draft?persistentId=doi:10.5072/FK2/BCCP9Z" --upload-file dataset-update-metadata.json
-
-# curl -H "X-Dataverse-key: 603f3561-5af2-48bc-a778-f92ffd25f9f7" \
-#      -H "Content-Type: application/json" \
-#      -X PUT "https://entrepot.recherche.data.gouv.fr/api/datasets/:persistentId/versions/:draft?persistentId=doi:10.57745/XO9GFU" \
-#      --upload-file RDG_metadata.json
+                                    metadata_path=res$metadata_path)
             }
             if ("add_file" %in% to_do) {
                 file_Paths = list.files(output_dirpath,
