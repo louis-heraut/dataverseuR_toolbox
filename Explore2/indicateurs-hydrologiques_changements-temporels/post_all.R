@@ -19,8 +19,8 @@
 # If not, see <https://www.gnu.org/licenses/>.
 
 
-library(dataverseuR)
-# devtools::load_all("/home/lheraut/Documents/INRAE/projects/dataverseuR_project/dataverseuR")
+# library(dataverseuR)
+devtools::load_all("/home/lheraut/Documents/INRAE/projects/dataverseuR_project/dataverseuR")
 library(dplyr)
 
 dotenv::load_dot_env(file=".env-entrepot")
@@ -32,7 +32,7 @@ to_do = c(
     "search_datasets",
     # "create_datasets"
     "modify_datasets"
-    # "add_netcdf"
+    # "add_file"
     # "add_readme"
     # "rename_files"
     # "delete_files"
@@ -52,7 +52,7 @@ datasets_info = ASHE::read_tibble(file.path(metadata_template_dir,
 
 
 if ("get_metadata" %in% to_do) {
-    dataset_DOI = "doi:10.57745/VA7KHZ"
+    dataset_DOI = "doi:10.57745/ZZYYZQ"
     metadata = get_datasets_metadata(dataset_DOI=dataset_DOI)
     convert_metadata(metadata)
 }
@@ -80,14 +80,14 @@ if ("search_datasets" %in% to_do) {
 
 if ("create_datasets" %in% to_do |
     "modify_datasets" %in% to_do |
-    "add_netcdf" %in% to_do |
+    "add_file" %in% to_do |
     "add_readme" %in% to_do) {
 
     stop_at_EXP =
-        TRUE
-        # FALSE
-    nEXP_start = 3
-    nHM_start = 6
+        # TRUE
+        FALSE
+    nEXP_start = 1
+    nHM_start = 1
 
     Dirpaths = list.dirs(path_to_data, recursive=FALSE)
     Dirpaths = Dirpaths[grepl("rcp", Dirpaths)]
@@ -187,7 +187,7 @@ if ("create_datasets" %in% to_do |
             }
 
             if ("modify_datasets" %in% to_do |
-                "add_netcdf" %in% to_do |
+                "add_file" %in% to_do |
                 "add_readme" %in% to_do) {
                 dataset = filter(datasets, grepl(exp_name, name) &
                                            grepl(hm, name))
@@ -200,15 +200,21 @@ if ("create_datasets" %in% to_do |
                 dataset_DOI =
                     modify_datasets(dataverse=dataverse,
                                     dataset_DOI=dataset_DOI,
-                                    metadata_path=res$metadata_path)
-                Sys.sleep(10)
+                                    metadata_path=res$metadata_path,
+                                    wait_time=2)
+# curl -H "X-Dataverse-key: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" -X PUT "https://demo.dataverse.org/api/datasets/:persistentId/versions/:draft?persistentId=doi:10.5072/FK2/BCCP9Z" --upload-file dataset-update-metadata.json
+
+# curl -H "X-Dataverse-key: 603f3561-5af2-48bc-a778-f92ffd25f9f7" \
+#      -H "Content-Type: application/json" \
+#      -X PUT "https://entrepot.recherche.data.gouv.fr/api/datasets/:persistentId/versions/:draft?persistentId=doi:10.57745/XO9GFU" \
+#      --upload-file RDG_metadata.json
             }
-            if ("add_netcdf" %in% to_do) {
-                nc_Paths = list.files(output_dirpath,
-                                      pattern=".nc",
-                                      full.names=TRUE)
-                add_dataset_files(dataset_DOI=dataset_DOI,
-                                  paths=nc_Paths)
+            if ("add_file" %in% to_do) {
+                file_Paths = list.files(output_dirpath,
+                                        pattern=".tar.gz",
+                                        full.names=TRUE)
+                add_datasets_files(dataset_DOI=dataset_DOI,
+                                  file_paths=file_Paths)
             }
             if ("add_readme" %in% to_do) {
                 README_template_path =

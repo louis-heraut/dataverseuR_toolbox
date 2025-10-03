@@ -100,7 +100,7 @@ https://doi.org/10.57745/SRZ8I9
 
 
 DESCRIPTION DES DONNÉES ______________________________________________
-Séries annuelles d'indicateurs issus des débits journaliers simulés
+Indicateurs de séries annuelles issus des débits journaliers simulés
 par le modèle hydrologique {HM} pour l'ensemble des
 projections climatiques Explore2 sous {RCP}. Ces fichiers
 résultent de l'agrégation temporelle des simulations hydrologiques
@@ -166,5 +166,4 @@ Les colonnes des fichier parquet sont :
 - date : Date du début de la période annuelle d'agrégation
   (i.e. 2042-05-01 indique que l'année hydrologique commence en mai,
   plus d'information dans les métadonnées de variable)
-- *variable* : Variable annuelle définie dans le récapitulatif des
-  indicateurs hydrologiques https://doi.org/10.57745/JVNHQL
+- *Variable* : Voir ci-dessus

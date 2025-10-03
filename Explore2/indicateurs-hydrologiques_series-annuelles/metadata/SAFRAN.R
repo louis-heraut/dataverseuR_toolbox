@@ -1,5 +1,5 @@
 
-META$title = "Séries annuelles d'indicateurs issus des simulations hydrologiques Explore2 du débit pour l'ensemble des modèles hydrologiques sous la réanalyse SAFRAN"
+META$title = "Indicateurs de séries annuelles issus des simulations hydrologiques Explore2 du débit pour l'ensemble des modèles hydrologiques sous la réanalyse SAFRAN"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
@@ -39,7 +39,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Séries annuelles d'indicateurs des débits journaliers issus des 9 modèles hydrologiques Explore2 pour la réanalyse SAFRAN. Ces fichiers NetCDF sont disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
+META$dsDescriptionValue = "Indicateurs de séries annuelles des débits journaliers issus des 9 modèles hydrologiques Explore2 pour la réanalyse SAFRAN. Ces fichiers NetCDF sont disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
 
 Ce dépôt regroupe un tableau 2D par indicateur et chaîne de simulation, c'est-à-dire, par modèle hydrologique HM. Ces données sont brutes et contiennent donc des chaînes de projections jugées aberrantes / horsains qu'il est possible de filter grâce à des <a href='https://doi.org/10.57745/YZNENQ'>métadonnées supplémentaires</a>. Pour des raisons techniques, ces indicateurs sont regroupés par dossiers compressés selon les différentes parties du régime hydrologique. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans le rapport <a href='https://doi.org/10.57745/PUR7ML'>https://doi.org/10.57745/PUR7ML</a>.<br><br>
 
@@ -70,7 +70,7 @@ La description des modèles hydrologiques utilisés est disponible dans les anne
 <li><i>HM</i> : Voir ci-dessus</li>
 <li><i>code</i> : Code à 10 caractère du point de simulation fourni dans la <a href='https://doi.org/10.57745/UTKWR5'>description des points de simualtion</a></li>
 <li><i>date</i> : Date du début de la période annuelle d'agrégation (<i>i.e.</i> 2042-05-01 indique que l'année hydrologique commence en mai, plus d'information dans les métadonnées de variable)</li>
-<li><i>*variable*</i> : Variable annuelle définie dans le <a href='https://doi.org/10.57745/JVNHQL'>récapitulatif des indicateurs hydrologiques</a>.</li>"
+<li><i>*Variable*</i> : Voir ci-dessus</li></ul>"
 
 META$dsDescriptionLanguage = "French"
 META$language = "French"

@@ -4,7 +4,10 @@
 |___|/_\_\| .__/|_|\___/|_|  \___|/___|
           |_|
 
-{CITE}
+Héraut, Louis, 2025, "Indicateurs de changements par horizons TRACC
+issus de l'ensemble des projections hydrologiques Explore2 du débit
+sous RCP 8.5 (référence 1991-2020) — Données associées aux fiches de
+synthèse TRACC", https://doi.org/10.57745/W0KO1G, Recherche Data Gouv
 
 
 INFORMATIONS GENERALES _______________________________________________
@@ -100,14 +103,24 @@ https://doi.org/10.57745/SRZ8I9
 
 
 DESCRIPTION DES DONNÉES ______________________________________________
-Indicateurs de séries annuelles des débits journaliers issus des
-9 modèles hydrologiques Explore2 pour la réanalyse SAFRAN. Ces
-fichiers NetCDF sont disponibles au téléchargement dans la
-collection Explore2 - Projections hydrologiques
+---
+Complète : Analyse des débits et de la recharge potentielle des
+aquifères par niveau de réchauffement et par secteur hydrographique
+— Fiche de synthèse https://doi.org/10.57745/QDCSBZ
+---
+
+Indicateurs de changements par horizons TRACC issus des débits
+journaliers simulés pour l'ensemble des modèles hydrologiques et
+l'ensemble des projections climatiques Explore2 sous RCP 8.5.
+Ces fichiers résultent de l'agrégation temporelle des simulations
+hydrologiques sous runs historiques (avant 2005) et des projections
+hydrologiques (post 2005), fichiers NetCDF disponibles au
+téléchargement dans la collection Explore2 - Projections hydrologiques
 https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques.
 
 Ce dépôt regroupe un tableau 2D par indicateur et chaîne de
-simulation, c'est-à-dire, par modèle hydrologique HM. Ces données sont
+simulation, c'est-à-dire, scénario d'émission RCP, couple GCM/RCM,
+correction de biais BC et modèle hydrologique HM. Ces données sont
 brutes et contiennent donc des chaînes de projections jugées
 aberrantes / horsains qu'il est possible de filter grâce à des
 métadonnées supplémentaires https://doi.org/10.57745/YZNENQ. Pour des
@@ -121,6 +134,11 @@ les annexes du rapport https://doi.org/10.57745/S6PQXD. Retrouvez le
 diagnostic des modèles hydrologiques résumé à l'échelle des régions
 hydrologiques dans les fiches téléchargeables ici :
 https://doi.org/10.57745/DMFUXW.
+
+Définition des 4 narratifs hydrologiques :
+L'ensemble des descriptions des narratifs hydrologique définit dans
+le cadre de la TRACC par niveau de réchauffement est défini ici :
+https://doi.org/10.57745/KAHIWJ.
 
 Métadonnées supplémentaires :
 - Récapitulatif de l'ensemble des indicateurs hydrologiques :
@@ -136,20 +154,24 @@ Métadonnées supplémentaires :
 
 Décomposition des chaînes de caractère formant le nom des fichiers
 parquet, séparées par des "_" :
-{1} Indicateur : Le nom de l’indicateur, du type de statistique
-    observée
-{2} Échantillonnage : Échantillonnage temporel sur laquelle est
-    calculé l’indicateur
+{1}  Indicateur : Le nom de l’indicateur, du type de statistique
+     observée
+{2}  Échantillonnage : Échantillonnage temporel sur laquelle est
+     calculé l’indicateur
 -> {1}_{2} Variable : Variable résultante d'un indicateur
-           temporellement contextualisé défini dans le
-	   récapitulatif des indicateurs hydrologiques
-	   https://doi.org/10.57745/JVNHQL
-{3} EXP : Identifiant de l’expérience historique ou future via le
-    scénario
-{4} GCM : Identifiant du GCM forçeur
-{5} RCM : Identifiant du RCM
-{6} BC : Identifiant de la méthode de correction de biais statistique
-{7} HM : Identifiant du modèle hydrologique
+           temporellement contextualisé
+{3}  RWL : Horizon TRACC (RWL-(20|27|40))
+-> {1}_{2}_{3} Changement : Changement d'une variable pour un horizon
+               TRACC par rapport à une période de référence, défini
+	       dans le récapitulatif des indicateurs
+	       hydrologiques https://doi.org/10.57745/JVNHQL
+{4}  EXP : Identifiant de l’expérience historique ou future via le
+     scénario
+{5}  GCM : Identifiant du GCM forçeur
+{6}  RCM : Identifiant du RCM
+{7}  BC : Identifiant de la méthode de correction de biais statistique
+{8}  HM : Identifiant du modèle hydrologique
+{9}  Référence : Période de référence (ref-YYYYMMDD-YYYYMMDD)
 
 Les colonnes des fichier parquet sont :
 - EXP : Voir ci-dessus
@@ -157,9 +179,9 @@ Les colonnes des fichier parquet sont :
 - RCM : Voir ci-dessus
 - BC : Voir ci-dessus
 - HM : Voir ci-dessus
+- SH : Secteur hydrographique qui contient le point de simulation
+  fourni dans la description des régions et secteurs hydrographiques
+  https://doi.org/10.57745/VPIIYJ
 - code : Code à 10 caractère du point de simulation fourni dans la
   description des points de simualtion https://doi.org/10.57745/UTKWR5
-- date : Date du début de la période annuelle d'agrégation
-  (i.e. 2042-05-01 indique que l'année hydrologique commence en mai,
-  plus d'information dans les métadonnées de variable)
-- *Variable* : Voir ci-dessus
+- *Changement* : Voir ci-dessus

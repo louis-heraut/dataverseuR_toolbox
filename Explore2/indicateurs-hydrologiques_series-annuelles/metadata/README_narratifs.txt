@@ -100,7 +100,7 @@ https://doi.org/10.57745/SRZ8I9
 
 
 DESCRIPTION DES DONNÉES ______________________________________________
-Ensemble des séries annuelles d'indicateurs associées aux 36 chaînes
+Ensemble des indicateurs de séries annuelles associées aux 36 chaînes
 de simulations de débits journaliers issus de 9 modèles hydrologiques
 pour la sélection des 4 narratifs climatiques Explore2 sous RCP 8.5.
 Ces fichiers résultent de l'agrégation temporelle des simulations
@@ -177,5 +177,4 @@ Les colonnes des fichier parquet sont :
 - date : Date du début de la période annuelle d'agrégation
   (i.e. 2042-05-01 indique que l'année hydrologique commence en mai,
   plus d'information dans les métadonnées de variable)
-- *variable* : Variable annuelle définie dans le récapitulatif des
-  indicateurs hydrologiques https://doi.org/10.57745/JVNHQL
+- *Variable* : Voir ci-dessus

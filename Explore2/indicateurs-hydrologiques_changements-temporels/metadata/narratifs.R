@@ -1,5 +1,5 @@
 
-META$title = "Ensemble des changements par horizons temporels d'indicateurs issus des narratifs des projections hydrologiques Explore2 du débit (référence 1976-2005)"
+META$title = "Ensemble des indicateurs de changements par horizons temporels issus des narratifs des projections hydrologiques Explore2 du débit (référence 1976-2005)"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
@@ -39,7 +39,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Ensemble des changements par horizons temporels d'indicateurs associés aux 36 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour la sélection des 4 narratifs climatiques Explore2 sous RCP 8.5. Ces fichiers résultent de l'agrégation temporelle des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
+META$dsDescriptionValue = "Ensemble des indicateurs de changements par horizons temporels associés aux 36 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour la sélection des 4 narratifs climatiques Explore2 sous RCP 8.5. Ces fichiers résultent de l'agrégation temporelle des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
 
 Ce dépôt regroupe un tableau 2D par indicateur et chaîne de simulation par narratif pour chaque modèle hydrologique, c'est-à-dire, scénario d'émission RCP, couple GCM/RCM, correction de biais BC et modèle hydrologique HM. Ces données sont brutes et contiennent donc des chaînes de projections jugées aberrantes / horsains qu'il est possible de filter grâce à des <a href='https://doi.org/10.57745/YZNENQ'>métadonnées supplémentaires</a>. Pour des raisons techniques, ces indicateurs sont regroupés par dossiers compressés selon les différentes parties du régime hydrologique. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans le rapport <a href='https://doi.org/10.57745/PUR7ML'>https://doi.org/10.57745/PUR7ML</a>.<br><br>
 
@@ -74,8 +74,8 @@ Réchauffement marqué et augmentation des précipitations</li>
 {6} <i>RCM</i> : Identifiant du RCM<br>
 {7} <i>BC</i> : Identifiant de la méthode de correction de biais statistique<br>
 {8} <i>HM</i> : Identifiant du modèle hydrologique<br>
-{9} <i>référence</i> : Période de référence (ref-YYYYMMDD-YYYYMMDD)<br>
-{10} <i>futur</i> : Période futur (fut-YYYYMMDD-YYYYMMDD)<br><br>
+{9} <i>Référence</i> : Période de référence (ref-YYYYMMDD-YYYYMMDD)<br>
+{10} <i>Futur</i> : Période futur (fut-YYYYMMDD-YYYYMMDD)<br><br>
 
 <b>Les colonnes des fichier parquet sont</b> : <ul>
 <li><i>EXP</i> : Voir ci-dessus</li>
@@ -84,7 +84,7 @@ Réchauffement marqué et augmentation des précipitations</li>
 <li><i>BC</i> : Voir ci-dessus</li>
 <li><i>HM</i> : Voir ci-dessus</li>
 <li><i>code</i> : Code à 10 caractère du point de simulation fourni dans la <a href='https://doi.org/10.57745/UTKWR5'>description des points de simualtion</a></li>
-<li><i>*variable*</i> : Variable annuelle définie dans le <a href='https://doi.org/10.57745/JVNHQL'>récapitulatif des indicateurs hydrologiques</a>.</li>"
+<li><i>*Changement*</i> : Voir ci-dessus</li></ul>"
 
 META$dsDescriptionLanguage = "French"
 META$language = "French"
@@ -160,7 +160,7 @@ META$relatedDatasetIDType = "doi"
 META$relatedDatasetIDNumber = "10.57745/X7THUO"
 META$relatedDatasetURL = "https://doi.org/10.57745/X7THUO"
 
-META$relatedDatasetCitation2 = "Héraut, Louis, 2025, \"Ensemble des séries annuelles d'indicateurs issus des narratifs des projections hydrologiques Explore2 du débit\""
+META$relatedDatasetCitation2 = "Héraut, Louis, 2025, \"Ensemble des indicateurs de séries annuelles issus des narratifs des projections hydrologiques Explore2 du débit\""
 META$relatedDatasetIDType2 = "doi"
 META$relatedDatasetIDNumber2 = "10.57745/RAJEZW"
 META$relatedDatasetURL2 = "https://doi.org/10.57745/RAJEZW"

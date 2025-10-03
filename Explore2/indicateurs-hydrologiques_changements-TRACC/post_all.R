@@ -31,9 +31,9 @@ to_do = c(
     # "get_metadata"
     "search_datasets",
     # "create_datasets"
-    "modify_datasets"
-    # "add_netcdf"
-    # "add_readme"
+    # "modify_datasets"
+    # "add_file"
+    "add_readme"
     # "rename_files"
     # "delete_files"
     # "delete_readme"
@@ -74,18 +74,18 @@ if ("search_datasets" %in% to_do) {
                         dataverse=dataverse,
                         n_search=n_search)
     datasets = dplyr::arrange(datasets, name)
-    datasets$name
+    datasets
 }
 
 
 if ("create_datasets" %in% to_do |
     "modify_datasets" %in% to_do |
-    "add_netcdf" %in% to_do |
+    "add_file" %in% to_do |
     "add_readme" %in% to_do) {
 
     stop_at_EXP =
-        TRUE
-        # FALSE
+        # TRUE
+        FALSE
     nEXP_start = 1
     nHM_start = 1
 
@@ -185,7 +185,7 @@ if ("create_datasets" %in% to_do |
             }
 
             if ("modify_datasets" %in% to_do |
-                "add_netcdf" %in% to_do |
+                "add_file" %in% to_do |
                 "add_readme" %in% to_do) {
                 dataset = filter(datasets, grepl(exp_name, name) &
                                            grepl(hm, name))
@@ -201,12 +201,12 @@ if ("create_datasets" %in% to_do |
                                     metadata_path=res$metadata_path)
                 Sys.sleep(10)
             }
-            if ("add_netcdf" %in% to_do) {
-                nc_Paths = list.files(output_dirpath,
-                                      pattern=".nc",
+            if ("add_file" %in% to_do) {
+                file_Paths = list.files(output_dirpath,
+                                      pattern=".tar.gz",
                                       full.names=TRUE)
-                add_dataset_files(dataset_DOI=dataset_DOI,
-                                  paths=nc_Paths)
+                add_datasets_files(dataset_DOI=dataset_DOI,
+                                   file_paths=file_Paths)
             }
             if ("add_readme" %in% to_do) {
                 README_template_path =

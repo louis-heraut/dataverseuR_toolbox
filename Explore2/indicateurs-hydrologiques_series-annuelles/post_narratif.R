@@ -31,9 +31,9 @@ to_do = c(
     # "get_metadata"
     "search_datasets",
     # "create_datasets"
-    "modify_datasets"
-    # "add_netcdf"
-    # "add_readme"
+    # "modify_datasets"
+    # "add_file"
+    "add_readme"
 )
 
 dataverse = "explore2-indicateurs_hydrologiques-series_annuelles"
@@ -70,7 +70,7 @@ if ("search_datasets" %in% to_do) {
 
 if ("create_datasets" %in% to_do |
     "modify_datasets" %in% to_do |
-    "add_netcdf" %in% to_do |
+    "add_file" %in% to_do |
     "add_readme" %in% to_do) {
     
     metadata_template_path = file.path(metadata_template_dir,
@@ -101,13 +101,13 @@ if ("create_datasets" %in% to_do |
                         metadata_path=res$metadata_path)
     }
 
-    if ("add_netcdf" %in% to_do) {
+    if ("add_file" %in% to_do) {
         dataset_DOI = datasets$dataset_DOI
-        nc_Paths = list.files(path_to_data,
-                              pattern=".nc",
-                              full.names=TRUE)
+        file_Paths = list.files(path_to_data,
+                                pattern=".tar.gz",
+                                full.names=TRUE)
         not_addded = add_datasets_files(dataset_DOI=dataset_DOI,
-                                        file_paths=nc_Paths)
+                                        file_paths=file_Paths)
     }
 
     if ("add_readme" %in% to_do) {

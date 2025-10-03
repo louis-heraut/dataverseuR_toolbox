@@ -1,5 +1,5 @@
 
-META$title = "Changements par horizons TRACC d'indicateurs issus des projections hydrologiques Explore2 du débit pour le modèle {HM} sous {RCP} (référence 1976-2005)"
+META$title = "Indicateurs de changements par horizons TRACC issus des projections hydrologiques Explore2 du débit pour le modèle {HM} sous {RCP} (référence 1976-2005)"
 
 META$alternativeURL = "https://www.drias-eau.fr/commande"
 
@@ -39,7 +39,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Changements par horizons TRACC d'indicateurs issus des débits journaliers simulés par le modèle hydrologique {HM} pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de l'agrégation temporelle des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
+META$dsDescriptionValue = "Indicateurs de changements par horizons TRACC issus des débits journaliers simulés par le modèle hydrologique {HM} pour l'ensemble des projections climatiques Explore2 sous {RCP}. Ces fichiers résultent de l'agrégation temporelle des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
 
 Ce dépôt regroupe un tableau 2D par indicateur et chaîne de simulation, c'est-à-dire, scénario d'émission RCP, couple GCM/RCM, correction de biais BC et modèle hydrologique HM. Ces données sont brutes et contiennent donc des chaînes de projections jugées aberrantes / horsains qu'il est possible de filter grâce à des <a href='https://doi.org/10.57745/YZNENQ'>métadonnées supplémentaires</a>. Pour des raisons techniques, ces indicateurs sont regroupés par dossiers compressés selon les différentes parties du régime hydrologique. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans le rapport <a href='https://doi.org/10.57745/PUR7ML'>https://doi.org/10.57745/PUR7ML</a>.<br><br>
 
@@ -66,7 +66,7 @@ L'ensemble des descriptions des narratifs hydrologique définit dans le cadre de
 {6} <i>RCM</i> : Identifiant du RCM<br>
 {7} <i>BC</i> : Identifiant de la méthode de correction de biais statistique<br>
 {8} <i>HM</i> : Identifiant du modèle hydrologique<br>
-{9} <i>référence</i> : Période de référence (ref-YYYYMMDD-YYYYMMDD)<br><br>
+{9} <i>Référence</i> : Période de référence (ref-YYYYMMDD-YYYYMMDD)<br><br>
 
 <b>Les colonnes des fichier parquet sont</b> : <ul>
 <li><i>EXP</i> : Voir ci-dessus</li>
@@ -75,7 +75,7 @@ L'ensemble des descriptions des narratifs hydrologique définit dans le cadre de
 <li><i>BC</i> : Voir ci-dessus</li>
 <li><i>HM</i> : Voir ci-dessus</li>
 <li><i>code</i> : Code à 10 caractère du point de simulation fourni dans la <a href='https://doi.org/10.57745/UTKWR5'>description des points de simualtion</a></li>
-<li><i>*changement*</i> : Voir ci-dessus</li>"
+<li><i>*Changement*</i> : Voir ci-dessus</li></ul>"
 
 META$dsDescriptionLanguage = "French"
 META$language = "French"

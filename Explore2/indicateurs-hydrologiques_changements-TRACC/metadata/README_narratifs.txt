@@ -100,8 +100,8 @@ https://doi.org/10.57745/SRZ8I9
 
 
 DESCRIPTION DES DONNÉES ______________________________________________
-Ensemble des changements par horizons TRACC d'indicateurs associés aux
-chaînes de simulations de débits journaliers issus de 9 modèles
+Ensemble des indicateurs de changements par horizons TRACC associés
+aux chaînes de simulations de débits journaliers issus de 9 modèles
 hydrologiques pour la sélection des narratifs hydrologiques Explore2
 sous RCP 8.5 par niveau de réchauffement et secteur hydrographique.
 Ces fichiers résultent de l'agrégation temporelle des simulations
@@ -164,7 +164,7 @@ parquet, séparées par des "_" :
 {6}  RCM : Identifiant du RCM
 {7}  BC : Identifiant de la méthode de correction de biais statistique
 {8}  HM : Identifiant du modèle hydrologique
-{9}  référence : Période de référence (ref-YYYYMMDD-YYYYMMDD)
+{9}  Référence : Période de référence (ref-YYYYMMDD-YYYYMMDD)
 
 Les colonnes des fichier parquet sont :
 - EXP : Voir ci-dessus
@@ -172,7 +172,9 @@ Les colonnes des fichier parquet sont :
 - RCM : Voir ci-dessus
 - BC : Voir ci-dessus
 - HM : Voir ci-dessus
+- SH : Secteur hydrographique qui contient le point de simulation
+  fourni dans la description des régions et secteurs hydrographiques
+  https://doi.org/10.57745/VPIIYJ
 - code : Code à 10 caractère du point de simulation fourni dans la
   description des points de simualtion https://doi.org/10.57745/UTKWR5
-- *variable* : Variable annuelle définie dans le récapitulatif des
-  indicateurs hydrologiques https://doi.org/10.57745/JVNHQL
+- *Changement* : Voir ci-dessus

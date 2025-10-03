@@ -100,7 +100,7 @@ https://doi.org/10.57745/SRZ8I9
 
 
 DESCRIPTION DES DONNÉES ______________________________________________
-Séries par horizons temporels d'indicateurs des débits journaliers
+Indicateurs de séries par horizons temporels des débits journaliers
 issus des 9 modèles hydrologiques Explore2 pour la réanalyse SAFRAN.
 Ces fichiers NetCDF sont disponibles au téléchargement dans la
 collection Explore2 - Projections hydrologiques
@@ -152,7 +152,7 @@ parquet, séparées par des "_" :
 {6} RCM : Identifiant du RCM
 {7} BC : Identifiant de la méthode de correction de biais statistique
 {8} HM : Identifiant du modèle hydrologique
-{9} futur : Période futur (fut-YYYYMMDD-YYYYMMDD)
+{9} Futur : Période futur (fut-YYYYMMDD-YYYYMMDD)
 
 Les colonnes des fichier parquet sont :
 - EXP : Voir ci-dessus
@@ -164,5 +164,4 @@ Les colonnes des fichier parquet sont :
   description des points de simualtion https://doi.org/10.57745/UTKWR5
 - date : (optionnelle) Date associée à l'agrégation (plus
   d'information dans les métadonnées de variable)
-- *variable* : Variable annuelle définie dans le récapitulatif des
-  indicateurs hydrologiques https://doi.org/10.57745/JVNHQL
+- *Série* : Voir ci-dessus

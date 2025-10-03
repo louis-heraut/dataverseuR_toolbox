@@ -31,9 +31,9 @@ to_do = c(
     # "get_metadata"
     "search_datasets",
     # "create_datasets"
-    "modify_datasets"
-    # "add_netcdf"
-    # "add_readme"
+    # "modify_datasets"
+    # "add_file"
+    "add_readme"
     # "rename_files"
     # "delete_files"
     # "delete_readme"
@@ -81,14 +81,14 @@ if ("search_datasets" %in% to_do) {
 
 if ("create_datasets" %in% to_do |
     "modify_datasets" %in% to_do |
-    "add_netcdf" %in% to_do |
+    "add_file" %in% to_do |
     "add_readme" %in% to_do) {
 
     stop_at_EXP =
-        TRUE
-        # FALSE
-    nEXP_start = 3
-    nHM_start = 9
+        # TRUE
+        FALSE
+    nEXP_start = 1
+    nHM_start = 1
 
     Dirpaths = list.dirs(path_to_data, recursive=FALSE)
     Dirpaths = Dirpaths[grepl("rcp", Dirpaths)]
@@ -175,7 +175,7 @@ if ("create_datasets" %in% to_do |
             }
 
             if ("modify_datasets" %in% to_do |
-                "add_netcdf" %in% to_do |
+                "add_file" %in% to_do |
                 "add_readme" %in% to_do) {
                 dataset = filter(datasets, grepl(exp_name, name) &
                                            grepl(hm, name))
@@ -191,12 +191,13 @@ if ("create_datasets" %in% to_do |
                                     metadata_path=res$metadata_path)
                 Sys.sleep(10)
             }
-            if ("add_netcdf" %in% to_do) {
-                nc_Paths = list.files(output_dirpath,
-                                      pattern=".nc",
-                                      full.names=TRUE)
-                add_dataset_files(dataset_DOI=dataset_DOI,
-                                  paths=nc_Paths)
+            if ("add_file" %in% to_do) {
+                file_Paths = list.files(output_dirpath,
+                                        pattern=".tar.gz",
+                                        full.names=TRUE)
+                add_datasets_files(dataset_DOI=dataset_DOI,
+                                   file_paths=file_Paths,
+                                   timeout=2000)
             }
             if ("add_readme" %in% to_do) {
                 README_template_path =
@@ -226,7 +227,7 @@ if ("rename_files" %in% to_do) {
     datasets_DOI = datasets$dataset_DOI
 
     Paths_nc = list.files(path_to_data,
-                          pattern=".nc",
+                          pattern=".tar.gz",
                           full.names=TRUE,
                           recursive=TRUE)
     Paths_nc = Paths_nc[!grepl("SAFRAN", dirname(Paths_nc))]

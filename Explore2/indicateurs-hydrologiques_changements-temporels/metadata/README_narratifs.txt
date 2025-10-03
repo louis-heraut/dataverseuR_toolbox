@@ -100,13 +100,14 @@ https://doi.org/10.57745/SRZ8I9
 
 
 DESCRIPTION DES DONNÉES ______________________________________________
-Ensemble des changements par horizons temporels d'indicateurs associés
-aux 36 chaînes de simulations de débits journaliers issus de 9 modèles
-hydrologiques pour la sélection des 4 narratifs climatiques Explore2
-sous RCP 8.5. Ces fichiers résultent de l'agrégation temporelle des
-simulations hydrologiques sous runs historiques (avant 2005) et des
-projections hydrologiques (post 2005), fichiers NetCDF disponibles au
-téléchargement dans la collection Explore2 - Projections hydrologiques
+Ensemble des indicateurs de changements par horizons temporels
+associés aux 36 chaînes de simulations de débits journaliers issus de
+9 modèles hydrologiques pour la sélection des 4 narratifs climatiques
+Explore2 sous RCP 8.5. Ces fichiers résultent de l'agrégation
+temporelle des simulations hydrologiques sous runs historiques
+(avant 2005) et des projections hydrologiques (post 2005), fichiers
+NetCDF disponibles au téléchargement dans la collection
+Explore2 - Projections hydrologiques
 https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques.
 
 Ce dépôt regroupe un tableau 2D par indicateur et chaîne de simulation
@@ -168,8 +169,8 @@ parquet, séparées par des "_" :
 {6}  RCM : Identifiant du RCM
 {7}  BC : Identifiant de la méthode de correction de biais statistique
 {8}  HM : Identifiant du modèle hydrologique
-{9}  référence : Période de référence (ref-YYYYMMDD-YYYYMMDD)
-{10} futur : Période futur (fut-YYYYMMDD-YYYYMMDD)
+{9}  Référence : Période de référence (ref-YYYYMMDD-YYYYMMDD)
+{10} Futur : Période futur (fut-YYYYMMDD-YYYYMMDD)
 
 Les colonnes des fichier parquet sont :
 - EXP : Voir ci-dessus
@@ -179,5 +180,4 @@ Les colonnes des fichier parquet sont :
 - HM : Voir ci-dessus
 - code : Code à 10 caractère du point de simulation fourni dans la
   description des points de simualtion https://doi.org/10.57745/UTKWR5
-- *variable* : Variable annuelle définie dans le récapitulatif des
-  indicateurs hydrologiques https://doi.org/10.57745/JVNHQL
+- *Changement* : Voir ci-dessus

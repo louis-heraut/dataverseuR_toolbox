@@ -1,5 +1,5 @@
 
-META$title = "Ensemble des changements par horizons temporels d'indicateurs issus des projections hydrologiques Explore2 du débit (référence 1976-2005)"
+META$title = "Ensemble des indicateurs de changements par horizons temporels issus des projections hydrologiques Explore2 du débit (référence 1976-2005)"
 META$alternativeTitle = "Collection Explore2 - Indicateurs hydrologiques / Changements par horizons temporels"
 
 META$alternativeURL = "https://entrepot.recherche.data.gouv.fr/dataverse/explore2-indicateurs_hydrologiques-changements_horizons"
@@ -40,7 +40,7 @@ META$distributorURL = "https://entrepot.recherche.data.gouv.fr"
 META$distributorLogoURL = "https://s3.fr-par.scw.cloud/rdg-portal/logos-macarons/Macarons%20Recherche%20Data%20Gouv_Entrep%C3%B4t.png"
 
 
-META$dsDescriptionValue = "Ensemble des changements par horizons temporels d'indicateurs associés aux 540 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour l'ensemble des projections climatiques Explore2. Ces fichiers résultent de l'agrégation temporelle des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
+META$dsDescriptionValue = "Ensemble des indicateurs de changements par horizons temporels associés aux 540 chaînes de simulations de débits journaliers issus de 9 modèles hydrologiques pour l'ensemble des projections climatiques Explore2. Ces fichiers résultent de l'agrégation temporelle des simulations hydrologiques sous runs historiques (avant 2005) et des projections hydrologiques (post 2005), fichiers NetCDF disponibles au téléchargement dans la collection <a href='https://entrepot.recherche.data.gouv.fr/dataverse/explore2-projections_hydrologiques'>Explore2 - Projections hydrologiques</a>.<br><br>
 
 Ce dépôt renvoit vers l'ensemble des sous-jeux de données séparés par modèles hydrologiques et scénario RCP. Chacun de ces sous-jeux de données regroupe un tableau 2D par indicateur et chaîne de simulation, c'est-à-dire, scénario d'émission RCP, couple GCM/RCM, correction de biais BC et modèle hydrologique HM. Ces données sont brutes et contiennent donc des chaînes de projections jugées aberrantes / horsains qu'il est possible de filter grâce à des <a href='https://doi.org/10.57745/YZNENQ'>métadonnées supplémentaires</a>. Pour des raisons techniques, ces indicateurs sont regroupés par dossiers compressés selon les différentes parties du régime hydrologique. Retrouvez davantage d'information sur la chaîne de modélisation du climat dans le rapport <a href='https://doi.org/10.57745/PUR7ML'>https://doi.org/10.57745/PUR7ML</a>.<br><br>
 
@@ -129,7 +129,7 @@ META$relatedDatasetIDType1 = "doi"
 META$relatedDatasetIDNumber1 = "10.57745/YHMBHC"
 META$relatedDatasetURL1 = "https://doi.org/10.57745/YHMBHC"
 
-META$relatedDatasetCitation2 = "Héraut, Louis, 2025, \"Ensemble des séries annuelles d'indicateurs issus des projections hydrologiques Explore2 du débit\""
+META$relatedDatasetCitation2 = "Héraut, Louis, 2025, \"Ensemble des indicateurs de séries annuelles issus des projections hydrologiques Explore2 du débit\""
 META$relatedDatasetIDType2 = "doi"
 META$relatedDatasetIDNumber2 = "10.57745/YLHQQE"
 META$relatedDatasetURL2 = "https://doi.org/10.57745/YLHQQE"
